@@ -225,6 +225,21 @@
     <EmbeddedResource Include="UserControlHome.resx">
       <DependentUpon>UserControlHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlPOS.resx">
+      <DependentUpon>UserControlPOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlProducts.resx">
+      <DependentUpon>UserControlProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlReports.resx">
+      <DependentUpon>UserControlReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlStaff.resx">
+      <DependentUpon>UserControlStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlStock.resx">
+      <DependentUpon>UserControlStock.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -239,12 +254,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LockIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\User\Logic.csproj">
-      <Project>{3b335e50-e36d-4f98-b12c-5a91f076ad62}</Project>
-      <Name>Logic</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\IconManageStaff.png" />
@@ -296,6 +305,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\IconLogOut2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logic\Logic.csproj">
+      <Project>{3b335e50-e36d-4f98-b12c-5a91f076ad62}</Project>
+      <Name>Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
