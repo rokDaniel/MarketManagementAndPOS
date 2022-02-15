@@ -45,6 +45,11 @@ namespace UI
             this.NavIndicator = new System.Windows.Forms.Panel();
             this.TimerClock = new System.Windows.Forms.Timer(this.components);
             this.userControlHome1 = new UI.UserControlHome();
+            this.userControlStaff1 = new UI.UserControlStaff();
+            this.userControlProducts1 = new UI.UserControlProducts();
+            this.userControlStock1 = new UI.UserControlStock();
+            this.userControlReports1 = new UI.UserControlReports();
+            this.userControlPOS1 = new UI.UserControlPOS();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -260,11 +265,51 @@ namespace UI
             this.userControlHome1.Size = new System.Drawing.Size(1132, 655);
             this.userControlHome1.TabIndex = 2;
             // 
+            // userControlStaff1
+            // 
+            this.userControlStaff1.Location = new System.Drawing.Point(214, 47);
+            this.userControlStaff1.Name = "userControlStaff1";
+            this.userControlStaff1.Size = new System.Drawing.Size(1132, 655);
+            this.userControlStaff1.TabIndex = 4;
+            // 
+            // userControlProducts1
+            // 
+            this.userControlProducts1.Location = new System.Drawing.Point(214, 47);
+            this.userControlProducts1.Name = "userControlProducts1";
+            this.userControlProducts1.Size = new System.Drawing.Size(1132, 655);
+            this.userControlProducts1.TabIndex = 5;
+            // 
+            // userControlStock1
+            // 
+            this.userControlStock1.Location = new System.Drawing.Point(214, 47);
+            this.userControlStock1.Name = "userControlStock1";
+            this.userControlStock1.Size = new System.Drawing.Size(1132, 655);
+            this.userControlStock1.TabIndex = 6;
+            // 
+            // userControlReports1
+            // 
+            this.userControlReports1.Location = new System.Drawing.Point(214, 47);
+            this.userControlReports1.Name = "userControlReports1";
+            this.userControlReports1.Size = new System.Drawing.Size(1132, 655);
+            this.userControlReports1.TabIndex = 7;
+            // 
+            // userControlPOS1
+            // 
+            this.userControlPOS1.Location = new System.Drawing.Point(214, 47);
+            this.userControlPOS1.Name = "userControlPOS1";
+            this.userControlPOS1.Size = new System.Drawing.Size(1132, 655);
+            this.userControlPOS1.TabIndex = 8;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1345, 702);
+            this.Controls.Add(this.userControlPOS1);
+            this.Controls.Add(this.userControlReports1);
+            this.Controls.Add(this.userControlStock1);
+            this.Controls.Add(this.userControlProducts1);
+            this.Controls.Add(this.userControlStaff1);
             this.Controls.Add(this.userControlHome1);
             this.Controls.Add(this.NavIndicator);
             this.Controls.Add(this.panel2);
@@ -298,5 +343,10 @@ namespace UI
         private System.Windows.Forms.Panel NavIndicator;
         private UserControlHome userControlHome1;
         private System.Windows.Forms.Timer TimerClock;
+        private UserControlStaff userControlStaff1;
+        private UserControlProducts userControlProducts1;
+        private UserControlStock userControlStock1;
+        private UserControlReports userControlReports1;
+        private UserControlPOS userControlPOS1;
     }
 }

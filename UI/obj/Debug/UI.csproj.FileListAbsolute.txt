@@ -70,7 +70,6 @@ C:\Users\DDM\source\repos\MiniMarketManagementSystem\UI\obj\Debug\UI.UserControl
 C:\Users\DDM\source\repos\MiniMarketManagementSystem\UI\bin\Debug\Logic.dll
 C:\Users\DDM\source\repos\MiniMarketManagementSystem\UI\bin\Debug\Logic.pdb
 C:\Users\DDM\source\repos\MiniMarketManagementSystem\UI\bin\Debug\Logic.dll.config
-C:\Users\DDM\source\repos\MiniMarketManagementSystem\UI\obj\Debug\UI.csproj.CopyComplete
 C:\Users\DDM\source\repos\MiniMarketManagementSystem\UI\obj\Debug\UI.UserControlPOS.resources
 C:\Users\DDM\source\repos\MiniMarketManagementSystem\UI\obj\Debug\UI.UserControlProducts.resources
 C:\Users\DDM\source\repos\MiniMarketManagementSystem\UI\obj\Debug\UI.UserControlReports.resources

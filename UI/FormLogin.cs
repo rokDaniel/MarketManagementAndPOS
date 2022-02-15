@@ -13,6 +13,7 @@ namespace UI
     {
         private readonly FormMain MainForm;
         private readonly FormWrongCredentials WrongCredentialsForm;
+
         public FormLogin()
         {
             InitializeComponent();
@@ -38,6 +39,8 @@ namespace UI
             }
             else
             {
+                TextUsername.Clear();
+                TextPassword.Clear();
                 WrongCredentialsForm.ShowDialog();
             }
         }
