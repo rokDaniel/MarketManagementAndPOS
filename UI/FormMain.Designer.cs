@@ -39,7 +39,7 @@ namespace UI
             this.ButtonHomePage = new System.Windows.Forms.Button();
             this.ButtonManageStaff = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.PanelTop = new System.Windows.Forms.Panel();
             this.LabelDate = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.NavIndicator = new System.Windows.Forms.Panel();
@@ -51,7 +51,7 @@ namespace UI
             this.userControlReports1 = new UI.UserControlReports();
             this.userControlPOS1 = new UI.UserControlPOS();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.PanelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -213,15 +213,16 @@ namespace UI
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // PanelTop
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.panel2.Controls.Add(this.LabelDate);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1346, 47);
-            this.panel2.TabIndex = 3;
+            this.PanelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.PanelTop.Controls.Add(this.LabelDate);
+            this.PanelTop.Controls.Add(this.label1);
+            this.PanelTop.Location = new System.Drawing.Point(0, 0);
+            this.PanelTop.Name = "PanelTop";
+            this.PanelTop.Size = new System.Drawing.Size(1346, 47);
+            this.PanelTop.TabIndex = 3;
+            this.PanelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelTop_MouseDown);
             // 
             // LabelDate
             // 
@@ -312,7 +313,7 @@ namespace UI
             this.Controls.Add(this.userControlStaff1);
             this.Controls.Add(this.userControlHome1);
             this.Controls.Add(this.NavIndicator);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.PanelTop);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMain";
@@ -320,8 +321,8 @@ namespace UI
             this.Text = "FormMain";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.PanelTop.ResumeLayout(false);
+            this.PanelTop.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -329,7 +330,7 @@ namespace UI
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel PanelTop;
         private System.Windows.Forms.Label LabelDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ButtonManageStaff;

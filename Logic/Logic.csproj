@@ -90,7 +90,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbConnection.cs" />
+    <Compile Include="Business Layer\Employee.cs" />
+    <Compile Include="Data Layer\DbConnection.cs" />
+    <Compile Include="Data Layer\DbEmployees.cs" />
+    <Compile Include="Data Layer\DbUsers.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

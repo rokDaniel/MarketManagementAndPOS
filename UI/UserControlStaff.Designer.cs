@@ -29,50 +29,54 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GroupboxSearch = new System.Windows.Forms.GroupBox();
+            this.ButtonClearSearch = new System.Windows.Forms.Button();
             this.ComboBoxRole = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ButtonSearch = new System.Windows.Forms.Button();
             this.TextBoxSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DatagreedviewEmployees = new System.Windows.Forms.DataGridView();
             this.StaffID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Adress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContactNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TextBoxID = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.comboBoxEmployeeStatus = new System.Windows.Forms.ComboBox();
+            this.ComboBoxEmployeeRole = new System.Windows.Forms.ComboBox();
+            this.ButtonClearFields = new System.Windows.Forms.Button();
+            this.ButtonUpdate = new System.Windows.Forms.Button();
+            this.ButtonAddEmployee = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.TextBoxRetypePass = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TextBoxPassword = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TextBoxUsername = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TextBoxNumber = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TextBoxAddress = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TextBoxFullName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TextBoxID = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ButtonDeleteEmployee = new System.Windows.Forms.Button();
             this.GroupboxSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DatagreedviewEmployees)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // GroupboxSearch
             // 
+            this.GroupboxSearch.Controls.Add(this.ButtonClearSearch);
             this.GroupboxSearch.Controls.Add(this.ComboBoxRole);
             this.GroupboxSearch.Controls.Add(this.label2);
             this.GroupboxSearch.Controls.Add(this.ButtonSearch);
@@ -88,25 +92,46 @@ namespace UI
             this.GroupboxSearch.TabStop = false;
             this.GroupboxSearch.Text = "SEARCH EMPLOYEE";
             // 
+            // ButtonClearSearch
+            // 
+            this.ButtonClearSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.ButtonClearSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonClearSearch.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonClearSearch.ForeColor = System.Drawing.Color.White;
+            this.ButtonClearSearch.Location = new System.Drawing.Point(583, 30);
+            this.ButtonClearSearch.Name = "ButtonClearSearch";
+            this.ButtonClearSearch.Size = new System.Drawing.Size(92, 27);
+            this.ButtonClearSearch.TabIndex = 4;
+            this.ButtonClearSearch.Text = "Clear search";
+            this.ButtonClearSearch.UseVisualStyleBackColor = false;
+            this.ButtonClearSearch.Click += new System.EventHandler(this.ButtonClearSearch_Click);
+            // 
             // ComboBoxRole
             // 
             this.ComboBoxRole.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ComboBoxRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComboBoxRole.FormattingEnabled = true;
-            this.ComboBoxRole.Location = new System.Drawing.Point(781, 32);
+            this.ComboBoxRole.Items.AddRange(new object[] {
+            "All",
+            "Administrator",
+            "Cashier",
+            "Warehouse clerk"});
+            this.ComboBoxRole.Location = new System.Drawing.Point(823, 30);
             this.ComboBoxRole.Name = "ComboBoxRole";
             this.ComboBoxRole.Size = new System.Drawing.Size(212, 25);
             this.ComboBoxRole.TabIndex = 3;
+            this.ComboBoxRole.Text = "All";
+            this.ComboBoxRole.SelectedIndexChanged += new System.EventHandler(this.ComboBoxRole_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(725, 35);
+            this.label2.Location = new System.Drawing.Point(723, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.Size = new System.Drawing.Size(92, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Role";
+            this.label2.Text = "Search by role";
             // 
             // ButtonSearch
             // 
@@ -120,17 +145,21 @@ namespace UI
             this.ButtonSearch.TabIndex = 1;
             this.ButtonSearch.Text = "Search";
             this.ButtonSearch.UseVisualStyleBackColor = false;
+            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // TextBoxSearch
             // 
             this.TextBoxSearch.BackColor = System.Drawing.SystemColors.Control;
             this.TextBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxSearch.ForeColor = System.Drawing.Color.Silver;
-            this.TextBoxSearch.Location = new System.Drawing.Point(68, 30);
+            this.TextBoxSearch.Location = new System.Drawing.Point(122, 30);
             this.TextBoxSearch.Name = "TextBoxSearch";
-            this.TextBoxSearch.Size = new System.Drawing.Size(425, 25);
+            this.TextBoxSearch.Size = new System.Drawing.Size(371, 25);
             this.TextBoxSearch.TabIndex = 1;
-            this.TextBoxSearch.Text = "Type here";
+            this.TextBoxSearch.Text = "Type name here";
+            this.TextBoxSearch.Enter += new System.EventHandler(this.TextBoxSearch_Enter);
+            this.TextBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSearch_KeyDown);
+            this.TextBoxSearch.Leave += new System.EventHandler(this.TextBoxSearch_Leave);
             // 
             // label1
             // 
@@ -138,105 +167,132 @@ namespace UI
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(15, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 17);
+            this.label1.Size = new System.Drawing.Size(101, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Search";
+            this.label1.Text = "Search by name";
             // 
-            // dataGridView1
+            // DatagreedviewEmployees
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DatagreedviewEmployees.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.DatagreedviewEmployees.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            this.DatagreedviewEmployees.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DatagreedviewEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DatagreedviewEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DatagreedviewEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StaffID,
             this.FullName,
             this.Adress,
             this.ContactNumber,
             this.Role,
-            this.Username});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(32, 117);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(582, 510);
-            this.dataGridView1.TabIndex = 1;
+            this.Username,
+            this.Status});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DatagreedviewEmployees.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DatagreedviewEmployees.EnableHeadersVisualStyles = false;
+            this.DatagreedviewEmployees.GridColor = System.Drawing.SystemColors.Control;
+            this.DatagreedviewEmployees.Location = new System.Drawing.Point(32, 117);
+            this.DatagreedviewEmployees.Margin = new System.Windows.Forms.Padding(0);
+            this.DatagreedviewEmployees.MultiSelect = false;
+            this.DatagreedviewEmployees.Name = "DatagreedviewEmployees";
+            this.DatagreedviewEmployees.ReadOnly = true;
+            this.DatagreedviewEmployees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DatagreedviewEmployees.RowHeadersVisible = false;
+            this.DatagreedviewEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DatagreedviewEmployees.Size = new System.Drawing.Size(642, 510);
+            this.DatagreedviewEmployees.TabIndex = 1;
+            this.DatagreedviewEmployees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatagreedviewEmployees_CellContentClick);
+            this.DatagreedviewEmployees.SelectionChanged += new System.EventHandler(this.DatagreedviewEmployees_SelectionChanged);
             // 
             // StaffID
             // 
+            this.StaffID.DataPropertyName = "id";
             this.StaffID.HeaderText = "Staff ID";
             this.StaffID.Name = "StaffID";
+            this.StaffID.ReadOnly = true;
             this.StaffID.Width = 50;
             // 
             // FullName
             // 
+            this.FullName.DataPropertyName = "full_name";
             this.FullName.HeaderText = "Full Name";
             this.FullName.MinimumWidth = 110;
             this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
             this.FullName.Width = 110;
             // 
             // Adress
             // 
-            this.Adress.HeaderText = "Adress";
+            this.Adress.DataPropertyName = "address";
+            this.Adress.HeaderText = "Address";
             this.Adress.MinimumWidth = 120;
             this.Adress.Name = "Adress";
+            this.Adress.ReadOnly = true;
             this.Adress.Width = 120;
             // 
             // ContactNumber
             // 
+            this.ContactNumber.DataPropertyName = "contact_number";
             this.ContactNumber.HeaderText = "Contact No.";
             this.ContactNumber.Name = "ContactNumber";
+            this.ContactNumber.ReadOnly = true;
             // 
             // Role
             // 
+            this.Role.DataPropertyName = "role";
             this.Role.HeaderText = "Role";
             this.Role.Name = "Role";
+            this.Role.ReadOnly = true;
             // 
             // Username
             // 
+            this.Username.DataPropertyName = "username";
             this.Username.HeaderText = "Username";
             this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            this.Username.Width = 80;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Width = 80;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.ButtonDeleteEmployee);
+            this.groupBox1.Controls.Add(this.comboBoxEmployeeStatus);
+            this.groupBox1.Controls.Add(this.ComboBoxEmployeeRole);
+            this.groupBox1.Controls.Add(this.ButtonClearFields);
+            this.groupBox1.Controls.Add(this.ButtonUpdate);
+            this.groupBox1.Controls.Add(this.ButtonAddEmployee);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.TextBoxRetypePass);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.TextBoxPassword);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.TextBoxUsername);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.TextBoxNumber);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.TextBoxAddress);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.TextBoxFullName);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.TextBoxID);
             this.groupBox1.Controls.Add(this.label3);
@@ -249,150 +305,74 @@ namespace UI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "EMPLOYEE INFORMATION";
             // 
-            // label3
+            // comboBoxEmployeeStatus
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(6, 35);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Staff ID:";
+            this.comboBoxEmployeeStatus.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.comboBoxEmployeeStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxEmployeeStatus.FormattingEnabled = true;
+            this.comboBoxEmployeeStatus.Items.AddRange(new object[] {
+            "Active",
+            "Vacation",
+            "Sick"});
+            this.comboBoxEmployeeStatus.Location = new System.Drawing.Point(131, 287);
+            this.comboBoxEmployeeStatus.Name = "comboBoxEmployeeStatus";
+            this.comboBoxEmployeeStatus.Size = new System.Drawing.Size(277, 25);
+            this.comboBoxEmployeeStatus.TabIndex = 12;
             // 
-            // TextBoxID
+            // ComboBoxEmployeeRole
             // 
-            this.TextBoxID.BackColor = System.Drawing.SystemColors.Control;
-            this.TextBoxID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBoxID.Location = new System.Drawing.Point(130, 32);
-            this.TextBoxID.Name = "TextBoxID";
-            this.TextBoxID.Size = new System.Drawing.Size(278, 25);
-            this.TextBoxID.TabIndex = 8;
+            this.ComboBoxEmployeeRole.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ComboBoxEmployeeRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ComboBoxEmployeeRole.FormattingEnabled = true;
+            this.ComboBoxEmployeeRole.Items.AddRange(new object[] {
+            "Administrator",
+            "Cashier",
+            "Warehouse clerk"});
+            this.ComboBoxEmployeeRole.Location = new System.Drawing.Point(131, 256);
+            this.ComboBoxEmployeeRole.Name = "ComboBoxEmployeeRole";
+            this.ComboBoxEmployeeRole.Size = new System.Drawing.Size(277, 25);
+            this.ComboBoxEmployeeRole.TabIndex = 4;
             // 
-            // label4
+            // ButtonClearFields
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(6, 70);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Full Name:";
+            this.ButtonClearFields.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.ButtonClearFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonClearFields.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonClearFields.ForeColor = System.Drawing.Color.White;
+            this.ButtonClearFields.Location = new System.Drawing.Point(70, 460);
+            this.ButtonClearFields.Name = "ButtonClearFields";
+            this.ButtonClearFields.Size = new System.Drawing.Size(172, 38);
+            this.ButtonClearFields.TabIndex = 11;
+            this.ButtonClearFields.Text = "Clear Fields";
+            this.ButtonClearFields.UseVisualStyleBackColor = false;
+            this.ButtonClearFields.Click += new System.EventHandler(this.ButtonClearFields_Click);
             // 
-            // textBox1
+            // ButtonUpdate
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(130, 67);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(278, 25);
-            this.textBox1.TabIndex = 8;
+            this.ButtonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.ButtonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonUpdate.ForeColor = System.Drawing.Color.White;
+            this.ButtonUpdate.Location = new System.Drawing.Point(249, 416);
+            this.ButtonUpdate.Name = "ButtonUpdate";
+            this.ButtonUpdate.Size = new System.Drawing.Size(172, 38);
+            this.ButtonUpdate.TabIndex = 10;
+            this.ButtonUpdate.Text = "Update Employee";
+            this.ButtonUpdate.UseVisualStyleBackColor = false;
             // 
-            // label5
+            // ButtonAddEmployee
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(6, 101);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Adress:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(130, 98);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(278, 25);
-            this.textBox2.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(6, 132);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 17);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Contact Number:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(130, 129);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(278, 25);
-            this.textBox3.TabIndex = 8;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(6, 163);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 17);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Username:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(130, 160);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(278, 25);
-            this.textBox4.TabIndex = 8;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(6, 194);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 17);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Password:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(130, 192);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.PasswordChar = '*';
-            this.textBox5.Size = new System.Drawing.Size(278, 25);
-            this.textBox5.TabIndex = 8;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(6, 225);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(118, 17);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Re-Type Password:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(130, 222);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.PasswordChar = '*';
-            this.textBox6.Size = new System.Drawing.Size(278, 25);
-            this.textBox6.TabIndex = 8;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(6, 256);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 17);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Role:";
+            this.ButtonAddEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.ButtonAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonAddEmployee.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonAddEmployee.ForeColor = System.Drawing.Color.White;
+            this.ButtonAddEmployee.Location = new System.Drawing.Point(70, 416);
+            this.ButtonAddEmployee.Name = "ButtonAddEmployee";
+            this.ButtonAddEmployee.Size = new System.Drawing.Size(172, 38);
+            this.ButtonAddEmployee.TabIndex = 9;
+            this.ButtonAddEmployee.Text = "Add employee";
+            this.ButtonAddEmployee.UseVisualStyleBackColor = false;
+            this.ButtonAddEmployee.Click += new System.EventHandler(this.ButtonAddEmployee_Click);
             // 
             // label11
             // 
@@ -404,77 +384,179 @@ namespace UI
             this.label11.TabIndex = 0;
             this.label11.Text = "Status:";
             // 
-            // button1
+            // label10
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(131, 416);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 38);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Create new";
-            this.button1.UseVisualStyleBackColor = false;
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(6, 256);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(37, 17);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Role:";
             // 
-            // button2
+            // TextBoxRetypePass
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(255, 416);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 38);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = false;
+            this.TextBoxRetypePass.BackColor = System.Drawing.SystemColors.Control;
+            this.TextBoxRetypePass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxRetypePass.Location = new System.Drawing.Point(130, 222);
+            this.TextBoxRetypePass.Name = "TextBoxRetypePass";
+            this.TextBoxRetypePass.PasswordChar = '*';
+            this.TextBoxRetypePass.Size = new System.Drawing.Size(278, 25);
+            this.TextBoxRetypePass.TabIndex = 8;
             // 
-            // button3
+            // label9
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(182, 460);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 38);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Clear Fields";
-            this.button3.UseVisualStyleBackColor = false;
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(6, 225);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(118, 17);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Re-Type Password:";
             // 
-            // comboBox1
+            // TextBoxPassword
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(131, 256);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(277, 25);
-            this.comboBox1.TabIndex = 4;
+            this.TextBoxPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.TextBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxPassword.Location = new System.Drawing.Point(130, 192);
+            this.TextBoxPassword.Name = "TextBoxPassword";
+            this.TextBoxPassword.PasswordChar = '*';
+            this.TextBoxPassword.Size = new System.Drawing.Size(278, 25);
+            this.TextBoxPassword.TabIndex = 8;
             // 
-            // comboBox2
+            // label8
             // 
-            this.comboBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(131, 287);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(277, 25);
-            this.comboBox2.TabIndex = 12;
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(6, 194);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 17);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Password:";
+            // 
+            // TextBoxUsername
+            // 
+            this.TextBoxUsername.BackColor = System.Drawing.SystemColors.Control;
+            this.TextBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxUsername.Location = new System.Drawing.Point(130, 160);
+            this.TextBoxUsername.Name = "TextBoxUsername";
+            this.TextBoxUsername.Size = new System.Drawing.Size(278, 25);
+            this.TextBoxUsername.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(6, 163);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 17);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Username:";
+            // 
+            // TextBoxNumber
+            // 
+            this.TextBoxNumber.BackColor = System.Drawing.SystemColors.Control;
+            this.TextBoxNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxNumber.Location = new System.Drawing.Point(130, 129);
+            this.TextBoxNumber.Name = "TextBoxNumber";
+            this.TextBoxNumber.Size = new System.Drawing.Size(278, 25);
+            this.TextBoxNumber.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(6, 132);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 17);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Contact Number:";
+            // 
+            // TextBoxAddress
+            // 
+            this.TextBoxAddress.BackColor = System.Drawing.SystemColors.Control;
+            this.TextBoxAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxAddress.Location = new System.Drawing.Point(130, 98);
+            this.TextBoxAddress.Name = "TextBoxAddress";
+            this.TextBoxAddress.Size = new System.Drawing.Size(278, 25);
+            this.TextBoxAddress.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(6, 101);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Adress:";
+            // 
+            // TextBoxFullName
+            // 
+            this.TextBoxFullName.BackColor = System.Drawing.SystemColors.Control;
+            this.TextBoxFullName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxFullName.Location = new System.Drawing.Point(130, 67);
+            this.TextBoxFullName.Name = "TextBoxFullName";
+            this.TextBoxFullName.Size = new System.Drawing.Size(278, 25);
+            this.TextBoxFullName.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(6, 70);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Full Name:";
+            // 
+            // TextBoxID
+            // 
+            this.TextBoxID.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.TextBoxID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxID.Enabled = false;
+            this.TextBoxID.Location = new System.Drawing.Point(130, 32);
+            this.TextBoxID.Name = "TextBoxID";
+            this.TextBoxID.Size = new System.Drawing.Size(278, 25);
+            this.TextBoxID.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(6, 35);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Staff ID:";
+            // 
+            // ButtonDeleteEmployee
+            // 
+            this.ButtonDeleteEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.ButtonDeleteEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonDeleteEmployee.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDeleteEmployee.ForeColor = System.Drawing.Color.White;
+            this.ButtonDeleteEmployee.Location = new System.Drawing.Point(249, 460);
+            this.ButtonDeleteEmployee.Name = "ButtonDeleteEmployee";
+            this.ButtonDeleteEmployee.Size = new System.Drawing.Size(172, 38);
+            this.ButtonDeleteEmployee.TabIndex = 13;
+            this.ButtonDeleteEmployee.Text = "Delete Employee";
+            this.ButtonDeleteEmployee.UseVisualStyleBackColor = false;
+            this.ButtonDeleteEmployee.Click += new System.EventHandler(this.ButtonDeleteEmployee_Click);
             // 
             // UserControlStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DatagreedviewEmployees);
             this.Controls.Add(this.GroupboxSearch);
             this.Name = "UserControlStaff";
             this.Size = new System.Drawing.Size(1132, 655);
+            this.Load += new System.EventHandler(this.UserControlStaff_Load);
             this.GroupboxSearch.ResumeLayout(false);
             this.GroupboxSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DatagreedviewEmployees)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -489,34 +571,37 @@ namespace UI
         private System.Windows.Forms.Button ButtonSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox ComboBoxRole;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DatagreedviewEmployees;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox TextBoxRetypePass;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox TextBoxPassword;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox TextBoxUsername;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox TextBoxNumber;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox TextBoxAddress;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox TextBoxFullName;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox TextBoxID;
+        private System.Windows.Forms.ComboBox comboBoxEmployeeStatus;
+        private System.Windows.Forms.ComboBox ComboBoxEmployeeRole;
+        private System.Windows.Forms.Button ButtonClearFields;
+        private System.Windows.Forms.Button ButtonUpdate;
+        private System.Windows.Forms.Button ButtonAddEmployee;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button ButtonClearSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn StaffID;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Adress;
         private System.Windows.Forms.DataGridViewTextBoxColumn ContactNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Role;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TextBoxID;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.Button ButtonDeleteEmployee;
     }
 }

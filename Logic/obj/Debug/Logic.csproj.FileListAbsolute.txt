@@ -56,4 +56,4 @@ C:\Users\DDM\source\repos\MiniMarketManagementSystem\Logic\bin\Debug\System.Runt
 C:\Users\DDM\source\repos\MiniMarketManagementSystem\Logic\obj\Debug\Logic.csproj.CoreCompileInputs.cache
 C:\Users\DDM\source\repos\MiniMarketManagementSystem\Logic\obj\Debug\Logic.dll
 C:\Users\DDM\source\repos\MiniMarketManagementSystem\Logic\obj\Debug\Logic.pdb
-C:\Users\DDM\source\repos\MiniMarketManagementSystem\Logic\obj\Debug\Logic.csproj.CopyComplete
+C:\Users\DDM\source\repos\MiniMarketManagementSystem\Logic\obj\Debug\Logic.csproj.AssemblyReference.cache

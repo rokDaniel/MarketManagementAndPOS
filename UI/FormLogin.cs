@@ -6,19 +6,22 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Logic;
+using Logic.Data_Layer;
 namespace UI
 {
     public partial class FormLogin : Form
     {
         private readonly FormMain MainForm;
         private readonly FormWrongCredentials WrongCredentialsForm;
+        private static string username;
+
+        public static string Username => username;
 
         public FormLogin()
         {
             InitializeComponent();
-            this.ActiveControl = TextUsername;
-            TextUsername.Focus();
+            this.ActiveControl = TextBoxUsername;
+            TextBoxUsername.Focus();
             MainForm = new FormMain();
             WrongCredentialsForm = new FormWrongCredentials();
 
@@ -31,16 +34,17 @@ namespace UI
 
         private void ButtonLogIn_Click(object sender, EventArgs e)
         {
-            if (DbConnection.IsCredetialsValid(TextUsername.Text, TextPassword.Text))
+            if (DbUsers.IsCredetialsValid(TextBoxUsername.Text, TextBoxPassword.Text))
             {
+                username = TextBoxUsername.Text;
                 this.Hide();
                 MainForm.ShowDialog();
                 this.Close();
             }
             else
             {
-                TextUsername.Clear();
-                TextPassword.Clear();
+                TextBoxUsername.Clear();
+                TextBoxPassword.Clear();
                 WrongCredentialsForm.ShowDialog();
             }
         }

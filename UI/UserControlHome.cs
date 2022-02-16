@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Logic;
+using Logic.Data_Layer;
 
 namespace UI
 {
@@ -18,6 +18,7 @@ namespace UI
         TimeSpan noon = new TimeSpan(18, 0, 0);
         TimeSpan night = new TimeSpan(20, 0, 0);
         string greetingString;
+        string employeeName;
 
         public UserControlHome()
         {
@@ -31,22 +32,23 @@ namespace UI
 
         private void initializeHeadline()
         {
+            employeeName = DbEmployees.GetEmployeeName(FormLogin.Username);
             TimeSpan now = DateTime.Now.TimeOfDay;
             if (now < morning && now > morningStart)
             {
-                greetingString = string.Format("Good morning, {0}.", DbConnection.userPrivateName);
+                greetingString = string.Format("Good morning, {0}.", employeeName);
             }
             else if (now < noon)
             {
-                greetingString = string.Format("Good afternoon, {0}.", DbConnection.userPrivateName);
+                greetingString = string.Format("Good afternoon, {0}.", employeeName);
             }
             else if (now < night)
             {
-                greetingString = string.Format("Good evening, {0}.", DbConnection.userPrivateName);
+                greetingString = string.Format("Good evening, {0}.", employeeName);
             }
             else
             {
-                greetingString = string.Format("Good night, {0}.", DbConnection.userPrivateName);
+                greetingString = string.Format("Good night, {0}.", employeeName);
             }
 
             LabelGreeting.Text = greetingString;

@@ -37,8 +37,8 @@ namespace UI
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ButtonLogIn = new System.Windows.Forms.Button();
             this.ButtonExit = new System.Windows.Forms.Button();
-            this.TextUsername = new System.Windows.Forms.TextBox();
-            this.TextPassword = new System.Windows.Forms.TextBox();
+            this.TextBoxUsername = new System.Windows.Forms.TextBox();
+            this.TextBoxPassword = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -132,23 +132,23 @@ namespace UI
             this.ButtonExit.UseVisualStyleBackColor = false;
             this.ButtonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
-            // TextUsername
+            // TextBoxUsername
             // 
-            this.TextUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextUsername.Location = new System.Drawing.Point(57, 218);
-            this.TextUsername.Name = "TextUsername";
-            this.TextUsername.Size = new System.Drawing.Size(209, 13);
-            this.TextUsername.TabIndex = 2;
+            this.TextBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxUsername.Location = new System.Drawing.Point(57, 218);
+            this.TextBoxUsername.Name = "TextBoxUsername";
+            this.TextBoxUsername.Size = new System.Drawing.Size(209, 13);
+            this.TextBoxUsername.TabIndex = 2;
             // 
-            // TextPassword
+            // TextBoxPassword
             // 
-            this.TextPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextPassword.Location = new System.Drawing.Point(57, 301);
-            this.TextPassword.Name = "TextPassword";
-            this.TextPassword.PasswordChar = '*';
-            this.TextPassword.Size = new System.Drawing.Size(209, 13);
-            this.TextPassword.TabIndex = 4;
-            this.TextPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextPassword_KeyDown);
+            this.TextBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxPassword.Location = new System.Drawing.Point(57, 301);
+            this.TextBoxPassword.Name = "TextBoxPassword";
+            this.TextBoxPassword.PasswordChar = '*';
+            this.TextBoxPassword.Size = new System.Drawing.Size(209, 13);
+            this.TextBoxPassword.TabIndex = 4;
+            this.TextBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextPassword_KeyDown);
             // 
             // FormLogin
             // 
@@ -156,8 +156,8 @@ namespace UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(292, 447);
-            this.Controls.Add(this.TextPassword);
-            this.Controls.Add(this.TextUsername);
+            this.Controls.Add(this.TextBoxPassword);
+            this.Controls.Add(this.TextBoxUsername);
             this.Controls.Add(this.ButtonExit);
             this.Controls.Add(this.ButtonLogIn);
             this.Controls.Add(this.panel2);
@@ -188,7 +188,7 @@ namespace UI
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button ButtonLogIn;
         private System.Windows.Forms.Button ButtonExit;
-        private System.Windows.Forms.TextBox TextUsername;
-        private System.Windows.Forms.TextBox TextPassword;
+        private System.Windows.Forms.TextBox TextBoxUsername;
+        private System.Windows.Forms.TextBox TextBoxPassword;
     }
 }
