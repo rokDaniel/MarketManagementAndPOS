@@ -47,6 +47,7 @@ namespace UI
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ButtonDeleteEmployee = new System.Windows.Forms.Button();
             this.comboBoxEmployeeStatus = new System.Windows.Forms.ComboBox();
             this.ComboBoxEmployeeRole = new System.Windows.Forms.ComboBox();
             this.ButtonClearFields = new System.Windows.Forms.Button();
@@ -68,7 +69,6 @@ namespace UI
             this.label4 = new System.Windows.Forms.Label();
             this.TextBoxID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.ButtonDeleteEmployee = new System.Windows.Forms.Button();
             this.GroupboxSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatagreedviewEmployees)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -214,6 +214,7 @@ namespace UI
             this.DatagreedviewEmployees.Size = new System.Drawing.Size(642, 510);
             this.DatagreedviewEmployees.TabIndex = 1;
             this.DatagreedviewEmployees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatagreedviewEmployees_CellContentClick);
+            this.DatagreedviewEmployees.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DatagreedviewEmployees_DataBindingComplete);
             this.DatagreedviewEmployees.SelectionChanged += new System.EventHandler(this.DatagreedviewEmployees_SelectionChanged);
             // 
             // StaffID
@@ -305,6 +306,20 @@ namespace UI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "EMPLOYEE INFORMATION";
             // 
+            // ButtonDeleteEmployee
+            // 
+            this.ButtonDeleteEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.ButtonDeleteEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonDeleteEmployee.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDeleteEmployee.ForeColor = System.Drawing.Color.White;
+            this.ButtonDeleteEmployee.Location = new System.Drawing.Point(249, 460);
+            this.ButtonDeleteEmployee.Name = "ButtonDeleteEmployee";
+            this.ButtonDeleteEmployee.Size = new System.Drawing.Size(172, 38);
+            this.ButtonDeleteEmployee.TabIndex = 13;
+            this.ButtonDeleteEmployee.Text = "Delete Employee";
+            this.ButtonDeleteEmployee.UseVisualStyleBackColor = false;
+            this.ButtonDeleteEmployee.Click += new System.EventHandler(this.ButtonDeleteEmployee_Click);
+            // 
             // comboBoxEmployeeStatus
             // 
             this.comboBoxEmployeeStatus.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -359,6 +374,7 @@ namespace UI
             this.ButtonUpdate.TabIndex = 10;
             this.ButtonUpdate.Text = "Update Employee";
             this.ButtonUpdate.UseVisualStyleBackColor = false;
+            this.ButtonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
             // 
             // ButtonAddEmployee
             // 
@@ -370,7 +386,7 @@ namespace UI
             this.ButtonAddEmployee.Name = "ButtonAddEmployee";
             this.ButtonAddEmployee.Size = new System.Drawing.Size(172, 38);
             this.ButtonAddEmployee.TabIndex = 9;
-            this.ButtonAddEmployee.Text = "Add employee";
+            this.ButtonAddEmployee.Text = "Add Employee";
             this.ButtonAddEmployee.UseVisualStyleBackColor = false;
             this.ButtonAddEmployee.Click += new System.EventHandler(this.ButtonAddEmployee_Click);
             // 
@@ -529,20 +545,6 @@ namespace UI
             this.label3.Size = new System.Drawing.Size(53, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Staff ID:";
-            // 
-            // ButtonDeleteEmployee
-            // 
-            this.ButtonDeleteEmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.ButtonDeleteEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonDeleteEmployee.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonDeleteEmployee.ForeColor = System.Drawing.Color.White;
-            this.ButtonDeleteEmployee.Location = new System.Drawing.Point(249, 460);
-            this.ButtonDeleteEmployee.Name = "ButtonDeleteEmployee";
-            this.ButtonDeleteEmployee.Size = new System.Drawing.Size(172, 38);
-            this.ButtonDeleteEmployee.TabIndex = 13;
-            this.ButtonDeleteEmployee.Text = "Delete Employee";
-            this.ButtonDeleteEmployee.UseVisualStyleBackColor = false;
-            this.ButtonDeleteEmployee.Click += new System.EventHandler(this.ButtonDeleteEmployee_Click);
             // 
             // UserControlStaff
             // 

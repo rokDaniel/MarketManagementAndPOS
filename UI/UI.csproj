@@ -50,11 +50,11 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormWrongCredentials.cs">
+    <Compile Include="FormMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormWrongCredentials.Designer.cs">
-      <DependentUpon>FormWrongCredentials.cs</DependentUpon>
+    <Compile Include="FormMessageBox.Designer.cs">
+      <DependentUpon>FormMessageBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -215,8 +215,8 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormWrongCredentials.resx">
-      <DependentUpon>FormWrongCredentials.cs</DependentUpon>
+    <EmbeddedResource Include="FormMessageBox.resx">
+      <DependentUpon>FormMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -311,6 +311,18 @@
       <Project>{3b335e50-e36d-4f98-b12c-5a91f076ad62}</Project>
       <Name>Logic</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconError.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconErrorBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconSuccess.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconWarning.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

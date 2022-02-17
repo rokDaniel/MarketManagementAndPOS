@@ -39,5 +39,16 @@ namespace Logic.Business_Layer
             EmployeeRole = (eEmployeeRole)employeeRoleIndex;
             EmployeeStatus = (eEmployeeStatus)employeeStatusIndex;
         }
+
+        public Employee(int id, string fullName, string address, string contactNo, string userName, int employeeRoleIndex, int employeeStatusIndex)
+        {
+            Id = id;
+            FulllName = fullName;
+            Address = address;
+            ContactNo = contactNo;
+            UserName = userName;
+            EmployeeRole = (eEmployeeRole)employeeRoleIndex;
+            EmployeeStatus = (eEmployeeStatus)employeeStatusIndex;
+        }
     }
 }

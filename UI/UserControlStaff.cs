@@ -14,9 +14,15 @@ namespace UI
 {
     public partial class UserControlStaff : UserControl
     {
+        private readonly FormMessageBox messageBoxForm;
+        private readonly List<Control> employeeInfo;
+
         public UserControlStaff()
         {
             InitializeComponent();
+            messageBoxForm = new FormMessageBox();
+            employeeInfo = new List<Control>
+            { TextBoxFullName, TextBoxAddress, TextBoxNumber, ComboBoxEmployeeRole, comboBoxEmployeeStatus };
         }
 
         private void UserControlStaff_Load(object sender, EventArgs e)
@@ -90,15 +96,42 @@ namespace UI
         {
             Employee newEmployee = new Employee(TextBoxFullName.Text, TextBoxAddress.Text, TextBoxNumber.Text,
                 TextBoxUsername.Text, ComboBoxEmployeeRole.SelectedIndex, comboBoxEmployeeStatus.SelectedIndex);
+            if (isInfoValid())
+            {
+                if (isPasswordMatch())
+                {
+                    if (DbEmployees.AddEmployee(newEmployee))
+                    {
+                        DatagreedviewEmployees.DataSource = DbEmployees.GetAllEmployees();
+                        messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Success, FormMessageBox.eMessageBoxTypes.EmployeeAddedSuccessfully);
+                        clearFields();
+                    }
+                    else
+                    {
+                        messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Fail, FormMessageBox.eMessageBoxTypes.EmployeeCouldNotBeAdded);
+                    }
+                }
+                else
+                {
+                    messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Warning, FormMessageBox.eMessageBoxTypes.PasswordDoesntMatch);
+                    TextBoxPassword.Clear();
+                    TextBoxRetypePass.Clear();
+                }
+            }
+            else
+            {
+                messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Warning, FormMessageBox.eMessageBoxTypes.MissingDetails);
+            }
+        }
 
-            DbEmployees.AddEmployee(newEmployee); //return bool
-            clearFields();
-            DatagreedviewEmployees.DataSource = DbEmployees.GetAllEmployees();
+        private bool isPasswordMatch()
+        {
+            return TextBoxPassword.Text == TextBoxRetypePass.Text;
         }
 
         private void ButtonDeleteEmployee_Click(object sender, EventArgs e)
         {
-            DbEmployees.DeleteEmployee(int.Parse(TextBoxID.Text)); //return bool
+            DbEmployees.DeleteEmployee(int.Parse(TextBoxID.Text));
             clearFields();
             DatagreedviewEmployees.DataSource = DbEmployees.GetAllEmployees();
         }
@@ -124,6 +157,31 @@ namespace UI
         {
             DatagreedviewEmployees.ClearSelection();
             clearFields();
+        }
+
+        private void ButtonUpdate_Click(object sender, EventArgs e)
+        {
+            Employee employeeToUpdate = new Employee(int.Parse(TextBoxID.Text), TextBoxFullName.Text, TextBoxAddress.Text, TextBoxNumber.Text,
+                TextBoxUsername.Text, ComboBoxEmployeeRole.SelectedIndex, comboBoxEmployeeStatus.SelectedIndex);
+
+            if (DbEmployees.UpdateEmployee(employeeToUpdate))
+            {
+                messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Success, FormMessageBox.eMessageBoxTypes.EmployeeUpdatedSuccessfully);
+                DatagreedviewEmployees.DataSource = DbEmployees.GetAllEmployees();
+            }
+        }
+
+        public bool isInfoValid()
+        {
+            foreach (Control control in employeeInfo)
+            {
+                if (string.IsNullOrEmpty(control.Text))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

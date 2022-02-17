@@ -12,7 +12,7 @@ namespace UI
     public partial class FormLogin : Form
     {
         private readonly FormMain MainForm;
-        private readonly FormWrongCredentials WrongCredentialsForm;
+        private readonly FormMessageBox MessageBoxForm;
         private static string username;
 
         public static string Username => username;
@@ -23,13 +23,7 @@ namespace UI
             this.ActiveControl = TextBoxUsername;
             TextBoxUsername.Focus();
             MainForm = new FormMain();
-            WrongCredentialsForm = new FormWrongCredentials();
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            MessageBoxForm = new FormMessageBox();
         }
 
         private void ButtonLogIn_Click(object sender, EventArgs e)
@@ -45,7 +39,7 @@ namespace UI
             {
                 TextBoxUsername.Clear();
                 TextBoxPassword.Clear();
-                WrongCredentialsForm.ShowDialog();
+                MessageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Fail, FormMessageBox.eMessageBoxTypes.WrongCardentials);
             }
         }
 

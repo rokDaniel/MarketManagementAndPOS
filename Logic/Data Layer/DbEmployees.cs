@@ -31,7 +31,11 @@ namespace Logic.Data_Layer
             sqlCmd.Connection = sqlConnection;
             sqlCmd.CommandText = query;
             sqlDataReader = sqlCmd.ExecuteReader();
-            employees.Load(sqlDataReader);
+            if (sqlDataReader.Read())
+            {
+                employees.Load(sqlDataReader);
+            }
+
             sqlConnection.Close();
 
             return employees;
@@ -45,7 +49,11 @@ namespace Logic.Data_Layer
             sqlCmd.Connection = sqlConnection;
             sqlCmd.CommandText = query;
             sqlDataReader = sqlCmd.ExecuteReader();
-            employees.Load(sqlDataReader);
+            if (sqlDataReader.Read())
+            {
+                employees.Load(sqlDataReader);
+            }
+
             sqlConnection.Close();
 
             return employees;
@@ -73,14 +81,16 @@ namespace Logic.Data_Layer
         public static string GetEmployeeName(string username)
         {
             query = string.Format("SELECT full_name FROM minimarket_db.employees WHERE username = '{0}'", username);
-            string userPrivateName;
+            string userPrivateName = string.Empty;
 
             sqlConnection = DbConnection.GetConnection();
             sqlCmd.Connection = sqlConnection;
             sqlCmd.CommandText = query;
             sqlDataReader = sqlCmd.ExecuteReader();
-            sqlDataReader.Read();
-            userPrivateName = sqlDataReader.GetString(0);
+            if (sqlDataReader.Read())
+            {
+                userPrivateName = sqlDataReader.GetString(0);
+            }
             sqlConnection.Close();
 
             return userPrivateName;
@@ -94,23 +104,20 @@ namespace Logic.Data_Layer
                 "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", newEmployee.FulllName, newEmployee.Address,
                 newEmployee.ContactNo, newEmployee.EmployeeRole.ToString(), newEmployee.UserName, newEmployee.EmployeeStatus.ToString());
 
-            sqlConnection = DbConnection.GetConnection();
-            sqlCmd.Connection = sqlConnection;
-            sqlCmd.CommandText = "ALTER TABLE minimarket_db.employees AUTO_INCREMENT = 1";
-            sqlCmd.ExecuteNonQuery();
-            sqlCmd.CommandText = query;
+            isSuccessful = executeNonQuery();
 
-            try
-            {
-                sqlCmd.ExecuteNonQuery();
-                isSuccessful = true;
-            }
-            catch (Exception)
-            {
-                isSuccessful = false;
-            }
+            return isSuccessful;
+        }
 
-            sqlConnection.Close();
+        public static bool UpdateEmployee(Employee updatedEmployee)
+        {
+            bool isSuccessful;
+            query = string.Format(
+                "UPDATE minimarket_db.employees SET full_name = '{0}', address = '{1}', contact_number = '{2}', " +
+                "role = '{3}', username = '{4}', status = '{5}' WHERE id = '{6}'", updatedEmployee.FulllName, updatedEmployee.Address,
+                updatedEmployee.ContactNo, updatedEmployee.EmployeeRole.ToString(), updatedEmployee.UserName, updatedEmployee.EmployeeStatus.ToString(), updatedEmployee.Id);
+
+            isSuccessful = executeNonQuery();
 
             return isSuccessful;
         }
@@ -118,24 +125,41 @@ namespace Logic.Data_Layer
         public static bool DeleteEmployee(int id)
         {
             bool isSuccessful;
-            query = string.Format("DELETE FROM minimarket_db.employees WHERE id = {0}", id);
-            string userPrivateName;
 
+            query = string.Format("DELETE FROM minimarket_db.employees WHERE id = {0}", id);
+            isSuccessful = executeNonQuery();
+
+            return isSuccessful;
+        }
+
+        private static bool executeNonQuery()
+        {
+            bool isSuccessful;
             sqlConnection = DbConnection.GetConnection();
             sqlCmd.Connection = sqlConnection;
+            sqlCmd.CommandText = "ALTER TABLE minimarket_db.employees AUTO_INCREMENT = 1";
+            sqlCmd.ExecuteNonQuery();
             sqlCmd.CommandText = query;
+            isSuccessful = tryExecuting();
+            sqlConnection.Close();
+
+            return isSuccessful;
+        }
+
+        private static bool tryExecuting()
+        {
+            bool isSuccessful;
 
             try
             {
                 sqlCmd.ExecuteNonQuery();
                 isSuccessful = true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 isSuccessful = false;
             }
-
-            sqlConnection.Close();
 
             return isSuccessful;
         }

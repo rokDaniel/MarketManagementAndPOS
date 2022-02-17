@@ -12,9 +12,20 @@ namespace UI
 {
     public partial class UserControlProducts : UserControl
     {
+        private readonly FormMessageBox messageBoxForm;
+        private readonly List<Control> productInfo;
+
         public UserControlProducts()
         {
             InitializeComponent();
+            messageBoxForm = new FormMessageBox();
+            productInfo = new List<Control>
+            { TextBoxDescription, ComboBoxCategory, TextBoxPrice };
+        }
+
+        private void UserControlProducts_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
