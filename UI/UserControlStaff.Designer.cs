@@ -213,7 +213,6 @@ namespace UI
             this.DatagreedviewEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DatagreedviewEmployees.Size = new System.Drawing.Size(642, 510);
             this.DatagreedviewEmployees.TabIndex = 1;
-            this.DatagreedviewEmployees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatagreedviewEmployees_CellContentClick);
             this.DatagreedviewEmployees.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DatagreedviewEmployees_DataBindingComplete);
             this.DatagreedviewEmployees.SelectionChanged += new System.EventHandler(this.DatagreedviewEmployees_SelectionChanged);
             // 

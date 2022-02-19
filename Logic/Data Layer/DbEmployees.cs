@@ -31,10 +31,7 @@ namespace Logic.Data_Layer
             sqlCmd.Connection = sqlConnection;
             sqlCmd.CommandText = query;
             sqlDataReader = sqlCmd.ExecuteReader();
-            if (sqlDataReader.Read())
-            {
-                employees.Load(sqlDataReader);
-            }
+            employees.Load(sqlDataReader);
 
             sqlConnection.Close();
 
@@ -49,10 +46,7 @@ namespace Logic.Data_Layer
             sqlCmd.Connection = sqlConnection;
             sqlCmd.CommandText = query;
             sqlDataReader = sqlCmd.ExecuteReader();
-            if (sqlDataReader.Read())
-            {
-                employees.Load(sqlDataReader);
-            }
+            employees.Load(sqlDataReader);
 
             sqlConnection.Close();
 
@@ -135,6 +129,7 @@ namespace Logic.Data_Layer
         private static bool executeNonQuery()
         {
             bool isSuccessful;
+
             sqlConnection = DbConnection.GetConnection();
             sqlCmd.Connection = sqlConnection;
             sqlCmd.CommandText = "ALTER TABLE minimarket_db.employees AUTO_INCREMENT = 1";

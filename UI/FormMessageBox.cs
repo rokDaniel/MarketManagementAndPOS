@@ -33,7 +33,12 @@ namespace UI
             EmployeeCouldNotBeAdded,
             EmployeeUpdatedSuccessfully,
             MissingDetails,
-            PasswordDoesntMatch
+            PasswordDoesntMatch,
+            ProductAddedSuccessfully,
+            ProductCouldNotBeAdded,
+            ItemWasNotSelected,
+            WorkerWasNotSelected,
+            ProductUpdatedSuccessfully
         }
 
         public FormMessageBox()
@@ -58,21 +63,7 @@ namespace UI
             }
             else if (requiredType == eMessageBoxGroups.Warning)
             {
-                messageTopPanelColor = Color.FromArgb(255, 255, 128);
-                messageTitleColor = Color.FromArgb(64, 64, 64);
-                messageIcon = Resources.IconWarning;
-
-                switch(requiredMessageBox)
-                {
-                    case eMessageBoxTypes.MissingDetails:
-                        messageTitle = "Missing Details!";
-                        messageText = "Please fill all Details.";
-                        break;
-                    case eMessageBoxTypes.PasswordDoesntMatch:
-                        messageTitle = "Passwords doesn't match!";
-                        messageText = "Passwords doesn't match. Please try to fill it again.";
-                        break;
-                }
+                handleWarningMesages(requiredMessageBox);
             }
             else
             {
@@ -81,6 +72,33 @@ namespace UI
 
             changeFormVisualization(messageTopPanelColor, messageTitle, messageTitleColor, messageIcon, messageText);
             this.ShowDialog();
+        }
+
+        private void handleWarningMesages(eMessageBoxTypes requiredMessageBox)
+        {
+            messageTopPanelColor = Color.FromArgb(255, 255, 128);
+            messageTitleColor = Color.FromArgb(64, 64, 64);
+            messageIcon = Resources.IconWarning;
+
+            switch (requiredMessageBox)
+            {
+                case eMessageBoxTypes.MissingDetails:
+                    messageTitle = "Missing Details!";
+                    messageText = "Please fill all Details.";
+                    break;
+                case eMessageBoxTypes.PasswordDoesntMatch:
+                    messageTitle = "Passwords doesn't match!";
+                    messageText = "Passwords doesn't match. Please try to fill it again.";
+                    break;
+                case eMessageBoxTypes.ItemWasNotSelected:
+                    messageTitle = "Item was not selected!";
+                    messageText = "Please select an item to delete.";
+                    break;
+                case eMessageBoxTypes.WorkerWasNotSelected:
+                    messageTitle = "Worker was not selected!";
+                    messageText = "Please select a worker.";
+                    break;
+            }
         }
 
         private void handleFailMessages(eMessageBoxTypes requiredMessageBox)
@@ -99,6 +117,10 @@ namespace UI
                     messageTitle = "Employee could not be added!";
                     messageText = "Employee could not be added!";
                     break;
+                case eMessageBoxTypes.ProductCouldNotBeAdded:
+                    messageTitle = "Product could not be added!";
+                    messageText = "Product could not be added!";
+                    break;
             }
         }
 
@@ -115,8 +137,16 @@ namespace UI
                     messageText = "Employee added successfully!";
                     break;
                 case eMessageBoxTypes.EmployeeUpdatedSuccessfully:
-                    messageTitle = "Employee updated successfully!";
-                    messageText = "Employee updated successfully!";
+                    messageTitle = "Employee details updated successfully!";
+                    messageText = "Employee details updated successfully!";
+                    break;
+                case eMessageBoxTypes.ProductAddedSuccessfully:
+                    messageTitle = "Product added successfully!";
+                    messageText = "product added successfully!";
+                    break;
+                case eMessageBoxTypes.ProductUpdatedSuccessfully:
+                    messageTitle = "Product details updated successfully!";
+                    messageText = "Product details updated successfully!";
                     break;
             }
         }

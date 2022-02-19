@@ -69,11 +69,6 @@ namespace UI
             }
         }
 
-        private void DatagreedviewEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void ButtonClearFields_Click(object sender, EventArgs e)
         {
             clearFields();
@@ -94,10 +89,11 @@ namespace UI
 
         private void ButtonAddEmployee_Click(object sender, EventArgs e)
         {
-            Employee newEmployee = new Employee(TextBoxFullName.Text, TextBoxAddress.Text, TextBoxNumber.Text,
-                TextBoxUsername.Text, ComboBoxEmployeeRole.SelectedIndex, comboBoxEmployeeStatus.SelectedIndex);
             if (isInfoValid())
             {
+                Employee newEmployee = new Employee(TextBoxFullName.Text, TextBoxAddress.Text, TextBoxNumber.Text,
+                    TextBoxUsername.Text, ComboBoxEmployeeRole.SelectedIndex, comboBoxEmployeeStatus.SelectedIndex);
+
                 if (isPasswordMatch())
                 {
                     if (DbEmployees.AddEmployee(newEmployee))
@@ -131,9 +127,16 @@ namespace UI
 
         private void ButtonDeleteEmployee_Click(object sender, EventArgs e)
         {
-            DbEmployees.DeleteEmployee(int.Parse(TextBoxID.Text));
-            clearFields();
-            DatagreedviewEmployees.DataSource = DbEmployees.GetAllEmployees();
+            if (!string.IsNullOrEmpty(TextBoxID.Text))
+            {
+                DbEmployees.DeleteEmployee(int.Parse(TextBoxID.Text));
+                clearFields();
+                DatagreedviewEmployees.DataSource = DbEmployees.GetAllEmployees();
+            }
+            else
+            {
+                messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Warning, FormMessageBox.eMessageBoxTypes.WorkerWasNotSelected);
+            }
         }
 
         private void DatagreedviewEmployees_SelectionChanged(object sender, EventArgs e)
@@ -161,13 +164,20 @@ namespace UI
 
         private void ButtonUpdate_Click(object sender, EventArgs e)
         {
-            Employee employeeToUpdate = new Employee(int.Parse(TextBoxID.Text), TextBoxFullName.Text, TextBoxAddress.Text, TextBoxNumber.Text,
-                TextBoxUsername.Text, ComboBoxEmployeeRole.SelectedIndex, comboBoxEmployeeStatus.SelectedIndex);
-
-            if (DbEmployees.UpdateEmployee(employeeToUpdate))
+            if (isInfoValid())
             {
-                messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Success, FormMessageBox.eMessageBoxTypes.EmployeeUpdatedSuccessfully);
-                DatagreedviewEmployees.DataSource = DbEmployees.GetAllEmployees();
+                Employee employeeToUpdate = new Employee(int.Parse(TextBoxID.Text), TextBoxFullName.Text, TextBoxAddress.Text, TextBoxNumber.Text,
+                    TextBoxUsername.Text, ComboBoxEmployeeRole.SelectedIndex, comboBoxEmployeeStatus.SelectedIndex);
+
+                if (DbEmployees.UpdateEmployee(employeeToUpdate))
+                {
+                    messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Success, FormMessageBox.eMessageBoxTypes.EmployeeUpdatedSuccessfully);
+                    DatagreedviewEmployees.DataSource = DbEmployees.GetAllEmployees();
+                }
+            }
+            else
+            {
+                messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Warning, FormMessageBox.eMessageBoxTypes.WorkerWasNotSelected);
             }
         }
 
