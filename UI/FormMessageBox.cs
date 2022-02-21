@@ -38,7 +38,8 @@ namespace UI
             ProductCouldNotBeAdded,
             ItemWasNotSelected,
             WorkerWasNotSelected,
-            ProductUpdatedSuccessfully
+            ProductUpdatedSuccessfully,
+            StockHasBeenAdded
         }
 
         public FormMessageBox()
@@ -84,7 +85,7 @@ namespace UI
             {
                 case eMessageBoxTypes.MissingDetails:
                     messageTitle = "Missing Details!";
-                    messageText = "Please fill all Details.";
+                    messageText = "Please fill all Details correctly.";
                     break;
                 case eMessageBoxTypes.PasswordDoesntMatch:
                     messageTitle = "Passwords doesn't match!";
@@ -92,7 +93,7 @@ namespace UI
                     break;
                 case eMessageBoxTypes.ItemWasNotSelected:
                     messageTitle = "Item was not selected!";
-                    messageText = "Please select an item to delete.";
+                    messageText = "Please select an item.";
                     break;
                 case eMessageBoxTypes.WorkerWasNotSelected:
                     messageTitle = "Worker was not selected!";
@@ -147,6 +148,10 @@ namespace UI
                 case eMessageBoxTypes.ProductUpdatedSuccessfully:
                     messageTitle = "Product details updated successfully!";
                     messageText = "Product details updated successfully!";
+                    break;
+                case eMessageBoxTypes.StockHasBeenAdded:
+                    messageTitle = "Stock has been added!";
+                    messageText = "Stock has been added!";
                     break;
             }
         }

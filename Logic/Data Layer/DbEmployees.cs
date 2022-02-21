@@ -19,7 +19,8 @@ namespace Logic.Data_Layer
         public enum eSearchType
         {
             Name,
-            Role
+            Role,
+            Id
         }
 
         public static DataTable GetAllEmployees()
@@ -55,20 +56,22 @@ namespace Logic.Data_Layer
 
         private static void getSearchQuery(string search, eSearchType searchType)
         {
-            if (searchType == eSearchType.Name)
+            switch(searchType)
             {
-                query = string.Format("SELECT * FROM minimarket_db.employees WHERE full_name LIKE '%{0}%'", search);
-            }
-            else
-            {
-                if (string.Equals(search, "All"))
-                {
-                    query = string.Format("SELECT * FROM minimarket_db.employees");
-                }
-                else
-                {
-                    query = string.Format("SELECT * FROM minimarket_db.employees WHERE role = '{0}'", search);
-                }
+                case eSearchType.Name:
+                    query = string.Format("SELECT * FROM minimarket_db.employees WHERE full_name LIKE '%{0}%'", search);
+                    break;
+                case eSearchType.Role:
+                    if (string.Equals(search, "All"))
+                    {
+                        query = string.Format("SELECT * FROM minimarket_db.employees");
+                    }
+                    else
+                    {
+                        query = string.Format("SELECT * FROM minimarket_db.employees WHERE role = '{0}'", search);
+                    }
+
+                    break;
             }
         }
 

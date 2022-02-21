@@ -29,8 +29,8 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TextBoxName = new System.Windows.Forms.TextBox();
@@ -58,6 +58,8 @@ namespace UI
             this.ButtonSearch = new System.Windows.Forms.Button();
             this.TextBoxSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TextBoxQuantity = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatagreedviewProducts)).BeginInit();
             this.GroupboxSearch.SuspendLayout();
@@ -65,6 +67,8 @@ namespace UI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.TextBoxQuantity);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.TextBoxName);
             this.groupBox1.Controls.Add(this.ButtonDeleteProduct);
@@ -83,7 +87,7 @@ namespace UI
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
             this.groupBox1.Location = new System.Drawing.Point(678, 118);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(427, 394);
+            this.groupBox1.Size = new System.Drawing.Size(427, 471);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PRODUCT INFORMATION";
@@ -113,7 +117,7 @@ namespace UI
             this.ButtonDeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonDeleteProduct.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonDeleteProduct.ForeColor = System.Drawing.Color.White;
-            this.ButtonDeleteProduct.Location = new System.Drawing.Point(222, 323);
+            this.ButtonDeleteProduct.Location = new System.Drawing.Point(224, 405);
             this.ButtonDeleteProduct.Name = "ButtonDeleteProduct";
             this.ButtonDeleteProduct.Size = new System.Drawing.Size(172, 38);
             this.ButtonDeleteProduct.TabIndex = 13;
@@ -133,7 +137,7 @@ namespace UI
             "Baked and Bread",
             "Alcohol and Beverage",
             "Cooking and Baking"});
-            this.ComboBoxCategory.Location = new System.Drawing.Point(129, 176);
+            this.ComboBoxCategory.Location = new System.Drawing.Point(131, 211);
             this.ComboBoxCategory.Name = "ComboBoxCategory";
             this.ComboBoxCategory.Size = new System.Drawing.Size(277, 25);
             this.ComboBoxCategory.TabIndex = 4;
@@ -144,7 +148,7 @@ namespace UI
             this.ButtonClearFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonClearFields.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonClearFields.ForeColor = System.Drawing.Color.White;
-            this.ButtonClearFields.Location = new System.Drawing.Point(43, 323);
+            this.ButtonClearFields.Location = new System.Drawing.Point(45, 405);
             this.ButtonClearFields.Name = "ButtonClearFields";
             this.ButtonClearFields.Size = new System.Drawing.Size(172, 38);
             this.ButtonClearFields.TabIndex = 11;
@@ -158,7 +162,7 @@ namespace UI
             this.ButtonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonUpdate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonUpdate.ForeColor = System.Drawing.Color.White;
-            this.ButtonUpdate.Location = new System.Drawing.Point(222, 279);
+            this.ButtonUpdate.Location = new System.Drawing.Point(224, 361);
             this.ButtonUpdate.Name = "ButtonUpdate";
             this.ButtonUpdate.Size = new System.Drawing.Size(172, 38);
             this.ButtonUpdate.TabIndex = 10;
@@ -172,7 +176,7 @@ namespace UI
             this.ButtonAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonAddProduct.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonAddProduct.ForeColor = System.Drawing.Color.White;
-            this.ButtonAddProduct.Location = new System.Drawing.Point(43, 279);
+            this.ButtonAddProduct.Location = new System.Drawing.Point(45, 361);
             this.ButtonAddProduct.Name = "ButtonAddProduct";
             this.ButtonAddProduct.Size = new System.Drawing.Size(172, 38);
             this.ButtonAddProduct.TabIndex = 9;
@@ -184,7 +188,7 @@ namespace UI
             // 
             this.TextBoxPrice.BackColor = System.Drawing.SystemColors.Control;
             this.TextBoxPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBoxPrice.Location = new System.Drawing.Point(129, 211);
+            this.TextBoxPrice.Location = new System.Drawing.Point(131, 246);
             this.TextBoxPrice.Name = "TextBoxPrice";
             this.TextBoxPrice.Size = new System.Drawing.Size(278, 25);
             this.TextBoxPrice.TabIndex = 8;
@@ -194,7 +198,7 @@ namespace UI
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(5, 214);
+            this.label6.Location = new System.Drawing.Point(10, 249);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 17);
             this.label6.TabIndex = 0;
@@ -204,7 +208,7 @@ namespace UI
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(7, 179);
+            this.label5.Location = new System.Drawing.Point(9, 214);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 17);
             this.label5.TabIndex = 0;
@@ -224,7 +228,7 @@ namespace UI
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(5, 105);
+            this.label4.Location = new System.Drawing.Point(8, 105);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 17);
             this.label4.TabIndex = 0;
@@ -255,14 +259,14 @@ namespace UI
             this.DatagreedviewProducts.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DatagreedviewProducts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
             this.DatagreedviewProducts.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DatagreedviewProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DatagreedviewProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DatagreedviewProducts.ColumnHeadersHeight = 28;
             this.DatagreedviewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DatagreedviewProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -272,14 +276,14 @@ namespace UI
             this.Description,
             this.Category,
             this.Price});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DatagreedviewProducts.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DatagreedviewProducts.DefaultCellStyle = dataGridViewCellStyle6;
             this.DatagreedviewProducts.EnableHeadersVisualStyles = false;
             this.DatagreedviewProducts.GridColor = System.Drawing.SystemColors.Control;
             this.DatagreedviewProducts.Location = new System.Drawing.Point(28, 118);
@@ -400,6 +404,7 @@ namespace UI
             this.TextBoxSearch.TabIndex = 1;
             this.TextBoxSearch.Text = "Type name or code here";
             this.TextBoxSearch.Enter += new System.EventHandler(this.TextBoxSearch_Enter);
+            this.TextBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSearch_KeyDown);
             this.TextBoxSearch.Leave += new System.EventHandler(this.TextBoxSearch_Leave);
             // 
             // label1
@@ -411,6 +416,25 @@ namespace UI
             this.label1.Size = new System.Drawing.Size(153, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Search by name or Code";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(9, 178);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 17);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Quantity:";
+            // 
+            // TextBoxQuantity
+            // 
+            this.TextBoxQuantity.BackColor = System.Drawing.SystemColors.Control;
+            this.TextBoxQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxQuantity.Location = new System.Drawing.Point(130, 176);
+            this.TextBoxQuantity.Name = "TextBoxQuantity";
+            this.TextBoxQuantity.Size = new System.Drawing.Size(278, 25);
+            this.TextBoxQuantity.TabIndex = 16;
             // 
             // UserControlProducts
             // 
@@ -461,5 +485,7 @@ namespace UI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TextBoxName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox TextBoxQuantity;
     }
 }

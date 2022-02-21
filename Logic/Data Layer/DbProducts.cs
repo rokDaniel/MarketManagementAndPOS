@@ -1,4 +1,5 @@
 ﻿using Logic.Business_Layer;
+using Logic.Extension;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -50,14 +51,20 @@ namespace Logic.Data_Layer
 
         public static bool AddProduct(Product newProduct)
         {
-            bool isSuccessful;
+            bool isSuccessful = false;
 
             query = string.Format(
                 "INSERT INTO minimarket_db.products(code, product_name, description, category, price) " +
                 "VALUES('{0}', '{1}', '{2}', '{3}', '{4}')", newProduct.Code, newProduct.Name,
-                newProduct.Description, newProduct.Category.ToString(), newProduct.Price.ToString());
+                newProduct.Description, newProduct.Category.EnumValue(), newProduct.Price.ToString());
 
-            isSuccessful = executeNonQuery();
+            if(executeNonQuery())
+            {
+                if (DbStock.AddProduct(newProduct))
+                {
+                    isSuccessful = true;
+                }
+            }
 
             return isSuccessful;
         }
@@ -85,9 +92,8 @@ namespace Logic.Data_Layer
                 sqlCmd.ExecuteNonQuery();
                 isSuccessful = true;
             }
-            catch (Exception e)
+            catch
             {
-                Console.WriteLine(e.Message);
                 isSuccessful = false;
             }
 
@@ -96,23 +102,35 @@ namespace Logic.Data_Layer
 
         public static bool DeleteProduct(string code)
         {
-            bool isSuccessful;
+            bool isSuccessful = false;
 
             query = string.Format("DELETE FROM minimarket_db.products WHERE code = '{0}'", code);
-            isSuccessful = executeNonQuery();
+            if (executeNonQuery())
+            {
+                if (DbStock.DeleteProduct(code))
+                {
+                    isSuccessful = true;
+                }
+            }
 
             return isSuccessful;
         }
 
         public static bool UpdateProduct(Product updatedProduct)
         {
-            bool isSuccessful;
+            bool isSuccessful = false;
+
             query = string.Format(
                 "UPDATE minimarket_db.products SET product_name = '{0}', description = '{1}', " +
-                "category = '{2}', price = '{3}'", updatedProduct.Name,
-                updatedProduct.Description, updatedProduct.Category.ToString(), updatedProduct.Price.ToString());
-
-            isSuccessful = executeNonQuery();
+                "category = '{2}', price = '{3}' WHERE code = '{4}'", updatedProduct.Name,
+                updatedProduct.Description, updatedProduct.Category.EnumValue(), updatedProduct.Price.ToString(), updatedProduct.Code);
+            if (executeNonQuery())
+            {
+                if (DbStock.UpdateProduct(updatedProduct))
+                {
+                    isSuccessful = true;
+                }
+            }
 
             return isSuccessful;
         }

@@ -1,6 +1,7 @@
 ﻿using Logic.Data_Layer;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,14 +24,16 @@ namespace Logic.Business_Layer
         public string Description { get; set; }
         public eCategory Category { get; set; }
         public float Price { get; set; }
+        public int Quantity { get; set; }
 
-        public Product(string productName, string productDescription, int productCategory, float productPrice)
+        public Product(string productName, string productDescription, int productQuantity, int productCategory, float productPrice)
         {
             Code = generateCode();
             Name = productName;
             Description = productDescription;
             Category = (eCategory)productCategory;
             Price = productPrice;
+            Quantity = productQuantity;
         }
         public Product(string productCode, string productName, string productDescription, int productCategory, float productPrice)
         {

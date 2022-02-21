@@ -16,13 +16,14 @@ namespace UI
     {
         private readonly FormMessageBox messageBoxForm;
         private readonly List<Control> productInfo;
+        private string itemToSearch;
 
         public UserControlProducts()
         {
             InitializeComponent();
             messageBoxForm = new FormMessageBox();
             productInfo = new List<Control>
-            { TextBoxDescription, ComboBoxCategory, TextBoxPrice };
+            { TextBoxName, TextBoxDescription, ComboBoxCategory, TextBoxPrice };
         }
 
         private void UserControlProducts_Load(object sender, EventArgs e)
@@ -32,7 +33,7 @@ namespace UI
 
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
-            DatagreedviewProducts.DataSource = DbProducts.SearchProduct(TextBoxSearch.Text);
+            DatagreedviewProducts.DataSource = DbProducts.SearchProduct(itemToSearch);
         }
 
         private void ButtonClearSearch_Click(object sender, EventArgs e)
@@ -48,18 +49,23 @@ namespace UI
 
         private void TextBoxSearch_Leave(object sender, EventArgs e)
         {
-            if (TextBoxSearch.Text == "")
-            {
-                TextBoxSearch.ForeColor = Color.Silver;
-                TextBoxSearch.Text = "Type name or code here";
-            }
+            handleSearchLeave();
+        }
+
+        private void handleSearchLeave()
+        {
+            itemToSearch = TextBoxSearch.Text;
+            TextBoxSearch.ForeColor = Color.Silver;
+            TextBoxSearch.Text = "Type name or code here";
         }
 
         private void TextBoxSearch_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
+                handleSearchLeave();
                 ButtonSearch.PerformClick();
+                ButtonSearch.Focus();
             }
         }
 
@@ -75,14 +81,16 @@ namespace UI
             TextBoxDescription.Text = string.Empty;
             ComboBoxCategory.Text = string.Empty;
             TextBoxPrice.Text = string.Empty;
+            TextBoxQuantity.Enabled = true;
+            TextBoxQuantity.BackColor = SystemColors.Control;
         }
 
         private void ButtonAddProduct_Click(object sender, EventArgs e)
         {
-            if (isInfoValid())
+            if (isInfoValid() && isNewProduct(TextBoxCode.Text))
             {
                 Product newProduct = new Product(TextBoxName.Text, TextBoxDescription.Text,
-                    ComboBoxCategory.SelectedIndex, float.Parse(TextBoxPrice.Text));
+                    int.Parse(TextBoxQuantity.Text), ComboBoxCategory.SelectedIndex, float.Parse(TextBoxPrice.Text));
 
                 if (DbProducts.AddProduct(newProduct))
                 {
@@ -99,6 +107,11 @@ namespace UI
             {
                 messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Warning, FormMessageBox.eMessageBoxTypes.MissingDetails);
             }
+        }
+
+        private bool isNewProduct(string code)
+        {
+            return code.Equals("");
         }
 
         public bool isInfoValid()
@@ -170,7 +183,8 @@ namespace UI
                 ComboBoxCategory.SelectedIndex = ComboBoxCategory.
                     FindStringExact(DatagreedviewProducts.SelectedRows[0].Cells[4].Value.ToString());
                 TextBoxPrice.Text = DatagreedviewProducts.SelectedRows[0].Cells[5].Value.ToString();
-
+                TextBoxQuantity.Enabled = false;
+                TextBoxQuantity.BackColor = SystemColors.ControlLight;
             }
         }
 

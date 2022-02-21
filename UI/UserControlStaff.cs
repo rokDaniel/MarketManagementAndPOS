@@ -16,6 +16,7 @@ namespace UI
     {
         private readonly FormMessageBox messageBoxForm;
         private readonly List<Control> employeeInfo;
+        private string nameToSearch;
 
         public UserControlStaff()
         {
@@ -32,7 +33,8 @@ namespace UI
 
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
-            DatagreedviewEmployees.DataSource = DbEmployees.SearchEmployee(TextBoxSearch.Text, DbEmployees.eSearchType.Name);
+            DatagreedviewEmployees.DataSource = DbEmployees.SearchEmployee(nameToSearch, DbEmployees.eSearchType.Name);
+            nameToSearch = string.Empty;
         }
 
         private void ButtonClearSearch_Click(object sender, EventArgs e)
@@ -49,11 +51,14 @@ namespace UI
 
         private void TextBoxSearch_Leave(object sender, EventArgs e)
         {
-            if (TextBoxSearch.Text == "")
-            {
-                TextBoxSearch.ForeColor = Color.Silver;
-                TextBoxSearch.Text = "Type name here";
-            }
+            handleSearchLeave();
+        }
+
+        private void handleSearchLeave()
+        {
+            nameToSearch = TextBoxSearch.Text;
+            TextBoxSearch.ForeColor = Color.Silver;
+            TextBoxSearch.Text = "Type name here";
         }
 
         private void ComboBoxRole_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,7 +70,9 @@ namespace UI
         {
             if (e.KeyCode == Keys.Enter)
             {
+                handleSearchLeave();
                 ButtonSearch.PerformClick();
+                ButtonSearch.Focus();
             }
         }
 
@@ -89,34 +96,32 @@ namespace UI
 
         private void ButtonAddEmployee_Click(object sender, EventArgs e)
         {
-            if (isInfoValid())
+            if (!isInfoValid())
             {
-                Employee newEmployee = new Employee(TextBoxFullName.Text, TextBoxAddress.Text, TextBoxNumber.Text,
-                    TextBoxUsername.Text, ComboBoxEmployeeRole.SelectedIndex, comboBoxEmployeeStatus.SelectedIndex);
+                messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Warning, FormMessageBox.eMessageBoxTypes.MissingDetails);
+                return;            
+            }
 
-                if (isPasswordMatch())
-                {
-                    if (DbEmployees.AddEmployee(newEmployee))
-                    {
-                        DatagreedviewEmployees.DataSource = DbEmployees.GetAllEmployees();
-                        messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Success, FormMessageBox.eMessageBoxTypes.EmployeeAddedSuccessfully);
-                        clearFields();
-                    }
-                    else
-                    {
-                        messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Fail, FormMessageBox.eMessageBoxTypes.EmployeeCouldNotBeAdded);
-                    }
-                }
-                else
-                {
-                    messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Warning, FormMessageBox.eMessageBoxTypes.PasswordDoesntMatch);
-                    TextBoxPassword.Clear();
-                    TextBoxRetypePass.Clear();
-                }
+            Employee newEmployee = new Employee(TextBoxFullName.Text, TextBoxAddress.Text, TextBoxNumber.Text,
+                TextBoxUsername.Text, ComboBoxEmployeeRole.SelectedIndex, comboBoxEmployeeStatus.SelectedIndex);
+
+            if (!isPasswordMatch())
+            {
+                messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Warning, FormMessageBox.eMessageBoxTypes.PasswordDoesntMatch);
+                TextBoxPassword.Clear();
+                TextBoxRetypePass.Clear();
+                return;
+            }
+
+            if (!DbEmployees.AddEmployee(newEmployee))
+            {
+                messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Fail, FormMessageBox.eMessageBoxTypes.EmployeeCouldNotBeAdded);
             }
             else
             {
-                messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Warning, FormMessageBox.eMessageBoxTypes.MissingDetails);
+                DatagreedviewEmployees.DataSource = DbEmployees.GetAllEmployees();
+                messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Success, FormMessageBox.eMessageBoxTypes.EmployeeAddedSuccessfully);
+                clearFields();
             }
         }
 

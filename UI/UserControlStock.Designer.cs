@@ -44,7 +44,6 @@ namespace UI
             this.label3 = new System.Windows.Forms.Label();
             this.TextBoxCode = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.ButtonCancel = new System.Windows.Forms.Button();
             this.ButtonAdd = new System.Windows.Forms.Button();
             this.TextBoxQuantity = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,12 +51,13 @@ namespace UI
             this.ButtonSearch = new System.Windows.Forms.Button();
             this.TextBoxSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ButtonCancel = new System.Windows.Forms.Button();
             this.DataGreedViewOrder = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameOfProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ButtonSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DatagreedviewStock)).BeginInit();
             this.GroupboxSearch.SuspendLayout();
@@ -105,6 +105,7 @@ namespace UI
             this.DatagreedviewStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DatagreedviewStock.Size = new System.Drawing.Size(502, 479);
             this.DatagreedviewStock.TabIndex = 7;
+            this.DatagreedviewStock.SelectionChanged += new System.EventHandler(this.DatagreedviewStock_SelectionChanged);
             // 
             // Number
             // 
@@ -153,7 +154,6 @@ namespace UI
             this.GroupboxSearch.Controls.Add(this.label3);
             this.GroupboxSearch.Controls.Add(this.TextBoxCode);
             this.GroupboxSearch.Controls.Add(this.label4);
-            this.GroupboxSearch.Controls.Add(this.ButtonCancel);
             this.GroupboxSearch.Controls.Add(this.ButtonAdd);
             this.GroupboxSearch.Controls.Add(this.TextBoxQuantity);
             this.GroupboxSearch.Controls.Add(this.label2);
@@ -213,19 +213,6 @@ namespace UI
             this.label4.TabIndex = 9;
             this.label4.Text = "Product Code: ";
             // 
-            // ButtonCancel
-            // 
-            this.ButtonCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.ButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonCancel.ForeColor = System.Drawing.Color.White;
-            this.ButtonCancel.Location = new System.Drawing.Point(523, 63);
-            this.ButtonCancel.Name = "ButtonCancel";
-            this.ButtonCancel.Size = new System.Drawing.Size(92, 27);
-            this.ButtonCancel.TabIndex = 8;
-            this.ButtonCancel.Text = "Cancel";
-            this.ButtonCancel.UseVisualStyleBackColor = false;
-            // 
             // ButtonAdd
             // 
             this.ButtonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
@@ -238,6 +225,7 @@ namespace UI
             this.ButtonAdd.TabIndex = 7;
             this.ButtonAdd.Text = "Add";
             this.ButtonAdd.UseVisualStyleBackColor = false;
+            this.ButtonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
             // 
             // TextBoxQuantity
             // 
@@ -249,6 +237,10 @@ namespace UI
             this.TextBoxQuantity.Size = new System.Drawing.Size(248, 25);
             this.TextBoxQuantity.TabIndex = 6;
             this.TextBoxQuantity.Text = "Type the quantity you want to add";
+            this.TextBoxQuantity.Enter += new System.EventHandler(this.TextBoxQuantity_Enter);
+            this.TextBoxQuantity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxQuantity_KeyDown);
+            this.TextBoxQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxQuantity_KeyPress);
+            this.TextBoxQuantity.Leave += new System.EventHandler(this.TextBoxQuantity_Leave);
             // 
             // label2
             // 
@@ -272,6 +264,7 @@ namespace UI
             this.ButtonClearSearch.TabIndex = 4;
             this.ButtonClearSearch.Text = "Clear search";
             this.ButtonClearSearch.UseVisualStyleBackColor = false;
+            this.ButtonClearSearch.Click += new System.EventHandler(this.ButtonClearSearch_Click);
             // 
             // ButtonSearch
             // 
@@ -298,6 +291,7 @@ namespace UI
             this.TextBoxSearch.TabIndex = 1;
             this.TextBoxSearch.Text = "Type name or code here";
             this.TextBoxSearch.Enter += new System.EventHandler(this.TextBoxSearch_Enter);
+            this.TextBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSearch_KeyDown);
             this.TextBoxSearch.Leave += new System.EventHandler(this.TextBoxSearch_Leave);
             // 
             // label1
@@ -309,6 +303,20 @@ namespace UI
             this.label1.Size = new System.Drawing.Size(153, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Search by name or Code";
+            // 
+            // ButtonCancel
+            // 
+            this.ButtonCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.ButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonCancel.ForeColor = System.Drawing.Color.White;
+            this.ButtonCancel.Location = new System.Drawing.Point(740, 601);
+            this.ButtonCancel.Name = "ButtonCancel";
+            this.ButtonCancel.Size = new System.Drawing.Size(175, 37);
+            this.ButtonCancel.TabIndex = 8;
+            this.ButtonCancel.Text = "Remove Selected";
+            this.ButtonCancel.UseVisualStyleBackColor = false;
+            this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // DataGreedViewOrder
             // 
@@ -326,11 +334,11 @@ namespace UI
             this.DataGreedViewOrder.ColumnHeadersHeight = 28;
             this.DataGreedViewOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DataGreedViewOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
+            this.ProductNumber,
+            this.NameOfProduct,
+            this.ProductCode,
+            this.ProductDescription,
+            this.ProductQuantity});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -352,46 +360,46 @@ namespace UI
             this.DataGreedViewOrder.Size = new System.Drawing.Size(502, 449);
             this.DataGreedViewOrder.TabIndex = 8;
             // 
-            // dataGridViewTextBoxColumn1
+            // ProductNumber
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "#";
-            this.dataGridViewTextBoxColumn1.HeaderText = "#";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 20;
+            this.ProductNumber.DataPropertyName = "#";
+            this.ProductNumber.HeaderText = "#";
+            this.ProductNumber.Name = "ProductNumber";
+            this.ProductNumber.ReadOnly = true;
+            this.ProductNumber.Width = 20;
             // 
-            // dataGridViewTextBoxColumn2
+            // NameOfProduct
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "product_name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Product Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 120;
+            this.NameOfProduct.DataPropertyName = "ProductName";
+            this.NameOfProduct.HeaderText = "Product Name";
+            this.NameOfProduct.Name = "NameOfProduct";
+            this.NameOfProduct.ReadOnly = true;
+            this.NameOfProduct.Width = 120;
             // 
-            // dataGridViewTextBoxColumn3
+            // ProductCode
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "code";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Code";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 110;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 110;
+            this.ProductCode.DataPropertyName = "Code";
+            this.ProductCode.HeaderText = "Code";
+            this.ProductCode.MinimumWidth = 110;
+            this.ProductCode.Name = "ProductCode";
+            this.ProductCode.ReadOnly = true;
+            this.ProductCode.Width = 110;
             // 
-            // dataGridViewTextBoxColumn4
+            // ProductDescription
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "description";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Description";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 120;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 150;
+            this.ProductDescription.DataPropertyName = "Description";
+            this.ProductDescription.HeaderText = "Description";
+            this.ProductDescription.MinimumWidth = 120;
+            this.ProductDescription.Name = "ProductDescription";
+            this.ProductDescription.ReadOnly = true;
+            this.ProductDescription.Width = 150;
             // 
-            // dataGridViewTextBoxColumn5
+            // ProductQuantity
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "quantity";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Quantity";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.ProductQuantity.DataPropertyName = "Quantity";
+            this.ProductQuantity.HeaderText = "Quantity";
+            this.ProductQuantity.Name = "ProductQuantity";
+            this.ProductQuantity.ReadOnly = true;
             // 
             // ButtonSave
             // 
@@ -405,6 +413,7 @@ namespace UI
             this.ButtonSave.TabIndex = 13;
             this.ButtonSave.Text = "Commit Stock Order";
             this.ButtonSave.UseVisualStyleBackColor = false;
+            this.ButtonSave.Click += new System.EventHandler(this.ButtonCommitOrder_Click);
             // 
             // UserControlStock
             // 
@@ -414,9 +423,11 @@ namespace UI
             this.Controls.Add(this.DataGreedViewOrder);
             this.Controls.Add(this.DatagreedviewStock);
             this.Controls.Add(this.GroupboxSearch);
+            this.Controls.Add(this.ButtonCancel);
             this.Name = "UserControlStock";
             this.Size = new System.Drawing.Size(1132, 655);
             this.Load += new System.EventHandler(this.UserControlStock_Load);
+            this.VisibleChanged += new System.EventHandler(this.UserControlStock_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.DatagreedviewStock)).EndInit();
             this.GroupboxSearch.ResumeLayout(false);
             this.GroupboxSearch.PerformLayout();
@@ -446,11 +457,11 @@ namespace UI
         private System.Windows.Forms.TextBox TextBoxQuantity;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView DataGreedViewOrder;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Button ButtonSave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameOfProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductQuantity;
     }
 }

@@ -97,6 +97,7 @@
     <Compile Include="Data Layer\DbProducts.cs" />
     <Compile Include="Data Layer\DbStock.cs" />
     <Compile Include="Data Layer\DbUsers.cs" />
+    <Compile Include="Extension\ExtensionsMethods.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
