@@ -118,79 +118,97 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="IconSuccess" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconSuccess.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconError" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconError.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconManageStaff3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconManageStaff3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PersonIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PersonIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LockIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LockIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconManageStock2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconManageStock2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconErrorBig" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconErrorBig.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconPOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconPOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconManageStaff" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconManageStaff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconManageStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconManageStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="PersonIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PersonIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconHome1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconHome1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconLogOut2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconLogOut2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconReports" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconReports.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconLogOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconLogOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconManageStaff2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconManageStaff2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconManageProducts" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconManageProducts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconHome2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconHome2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconHome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconPOS2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconPOS2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconManageProducts2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconManageProducts2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconReports2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconReports2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="IconCreditCard2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconCreditCard2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconError" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconError.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconDollarSign2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconDollarSign2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconSuccess" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconSuccess.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PersonIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PersonIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconReports" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconReports.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconManageStaff2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconManageStaff2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconShoppingCart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconShoppingCart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconManageStock2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconManageStock2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconManageProducts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconManageProducts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconPOS2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconPOS2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconManageProducts2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconManageProducts2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="IconWarning" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconWarning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconHome2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconHome2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconLogOut2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconLogOut2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LockIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LockIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconHome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconManageStaff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconManageStaff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconDiscount2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconDiscount2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconManageStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconManageStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconErrorBig" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconErrorBig.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconLogOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconLogOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconHome1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconHome1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconManageStaff3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconManageStaff3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconPOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconPOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconShoppingCart2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconShoppingCart2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconClearCart2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconClearCart2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

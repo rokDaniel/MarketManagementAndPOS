@@ -75,3 +75,6 @@ C:\Users\DDM\source\repos\MiniMarketManagementSystem\UI\obj\Debug\UI.UserControl
 C:\Users\DDM\source\repos\MiniMarketManagementSystem\UI\obj\Debug\UI.UserControlStaff.resources
 C:\Users\DDM\source\repos\MiniMarketManagementSystem\UI\obj\Debug\UI.UserControlStock.resources
 C:\Users\DDM\source\repos\MiniMarketManagementSystem\UI\obj\Debug\UI.FormMessageBox.resources
+C:\Users\DDM\source\repos\MiniMarketManagementSystem\UI\obj\Debug\UI.FormSearchProduct.resources
+C:\Users\DDM\source\repos\MiniMarketManagementSystem\UI\obj\Debug\UI.FormOrderQuantity.resources
+C:\Users\DDM\source\repos\MiniMarketManagementSystem\UI\obj\Debug\UI.FormDiscount.resources

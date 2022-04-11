@@ -19,10 +19,12 @@ namespace Logic.Extension
                     return "Diary";
                 case eCategory.BakedAndBread:
                     return "Baked And Bread";
-                case eCategory.AlcoholAndBeverage:
-                    return "Alcohol And Beverage";
-                case eCategory.CookingAndBaking:
-                    return "Cooking And Baking";
+                case eCategory.Meat:
+                    return "Meat";
+                case eCategory.AlcoholAndBeverages:
+                    return "Alcohol And Beverages";
+                case eCategory.Cooking:
+                    return "Cooking";
                 default:
                     return "Other";
             }

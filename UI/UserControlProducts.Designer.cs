@@ -29,9 +29,11 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TextBoxQuantity = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TextBoxName = new System.Windows.Forms.TextBox();
             this.ButtonDeleteProduct = new System.Windows.Forms.Button();
@@ -46,23 +48,16 @@ namespace UI
             this.label4 = new System.Windows.Forms.Label();
             this.TextBoxCode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.DatagreedviewProducts = new System.Windows.Forms.DataGridView();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupboxSearch = new System.Windows.Forms.GroupBox();
             this.ButtonClearSearch = new System.Windows.Forms.Button();
             this.ButtonSearch = new System.Windows.Forms.Button();
             this.TextBoxSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TextBoxQuantity = new System.Windows.Forms.TextBox();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DatagridviewProducts = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DatagreedviewProducts)).BeginInit();
             this.GroupboxSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DatagridviewProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -91,6 +86,26 @@ namespace UI
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PRODUCT INFORMATION";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(9, 178);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 17);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Quantity:";
+            // 
+            // TextBoxQuantity
+            // 
+            this.TextBoxQuantity.BackColor = System.Drawing.SystemColors.Control;
+            this.TextBoxQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxQuantity.Location = new System.Drawing.Point(130, 176);
+            this.TextBoxQuantity.Name = "TextBoxQuantity";
+            this.TextBoxQuantity.Size = new System.Drawing.Size(278, 25);
+            this.TextBoxQuantity.TabIndex = 16;
+            this.TextBoxQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxQuantity_KeyPress);
             // 
             // label2
             // 
@@ -254,101 +269,6 @@ namespace UI
             this.label3.TabIndex = 0;
             this.label3.Text = "Product Code:";
             // 
-            // DatagreedviewProducts
-            // 
-            this.DatagreedviewProducts.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.DatagreedviewProducts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            this.DatagreedviewProducts.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DatagreedviewProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.DatagreedviewProducts.ColumnHeadersHeight = 28;
-            this.DatagreedviewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.DatagreedviewProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Number,
-            this.ProductName,
-            this.Code,
-            this.Description,
-            this.Category,
-            this.Price});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DatagreedviewProducts.DefaultCellStyle = dataGridViewCellStyle6;
-            this.DatagreedviewProducts.EnableHeadersVisualStyles = false;
-            this.DatagreedviewProducts.GridColor = System.Drawing.SystemColors.Control;
-            this.DatagreedviewProducts.Location = new System.Drawing.Point(28, 118);
-            this.DatagreedviewProducts.Margin = new System.Windows.Forms.Padding(0);
-            this.DatagreedviewProducts.MultiSelect = false;
-            this.DatagreedviewProducts.Name = "DatagreedviewProducts";
-            this.DatagreedviewProducts.ReadOnly = true;
-            this.DatagreedviewProducts.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DatagreedviewProducts.RowHeadersVisible = false;
-            this.DatagreedviewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DatagreedviewProducts.Size = new System.Drawing.Size(632, 510);
-            this.DatagreedviewProducts.TabIndex = 4;
-            this.DatagreedviewProducts.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DatagreedviewProducts_DataBindingComplete);
-            this.DatagreedviewProducts.SelectionChanged += new System.EventHandler(this.DatagreedviewProducts_SelectionChanged);
-            // 
-            // Number
-            // 
-            this.Number.DataPropertyName = "#";
-            this.Number.HeaderText = "#";
-            this.Number.Name = "Number";
-            this.Number.ReadOnly = true;
-            this.Number.Width = 20;
-            // 
-            // ProductName
-            // 
-            this.ProductName.DataPropertyName = "product_name";
-            this.ProductName.HeaderText = "Product Name";
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            this.ProductName.Width = 120;
-            // 
-            // Code
-            // 
-            this.Code.DataPropertyName = "code";
-            this.Code.HeaderText = "Code";
-            this.Code.MinimumWidth = 110;
-            this.Code.Name = "Code";
-            this.Code.ReadOnly = true;
-            this.Code.Width = 110;
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "description";
-            this.Description.HeaderText = "Description";
-            this.Description.MinimumWidth = 120;
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            this.Description.Width = 150;
-            // 
-            // Category
-            // 
-            this.Category.DataPropertyName = "category";
-            this.Category.HeaderText = "Category";
-            this.Category.Name = "Category";
-            this.Category.ReadOnly = true;
-            this.Category.Width = 150;
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "price";
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.Width = 80;
-            // 
             // GroupboxSearch
             // 
             this.GroupboxSearch.Controls.Add(this.ButtonClearSearch);
@@ -417,40 +337,66 @@ namespace UI
             this.label1.TabIndex = 0;
             this.label1.Text = "Search by name or Code";
             // 
-            // label7
+            // Number
             // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(9, 178);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 17);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Quantity:";
+            this.Number.DataPropertyName = "number";
+            this.Number.HeaderText = "#";
+            this.Number.Name = "Number";
+            this.Number.Width = 20;
             // 
-            // TextBoxQuantity
+            // DatagridviewProducts
             // 
-            this.TextBoxQuantity.BackColor = System.Drawing.SystemColors.Control;
-            this.TextBoxQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBoxQuantity.Location = new System.Drawing.Point(130, 176);
-            this.TextBoxQuantity.Name = "TextBoxQuantity";
-            this.TextBoxQuantity.Size = new System.Drawing.Size(278, 25);
-            this.TextBoxQuantity.TabIndex = 16;
+            this.DatagridviewProducts.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.DatagridviewProducts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            this.DatagridviewProducts.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DatagridviewProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DatagridviewProducts.ColumnHeadersHeight = 28;
+            this.DatagridviewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DatagridviewProducts.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DatagridviewProducts.EnableHeadersVisualStyles = false;
+            this.DatagridviewProducts.GridColor = System.Drawing.SystemColors.Control;
+            this.DatagridviewProducts.Location = new System.Drawing.Point(28, 118);
+            this.DatagridviewProducts.Margin = new System.Windows.Forms.Padding(0);
+            this.DatagridviewProducts.MultiSelect = false;
+            this.DatagridviewProducts.Name = "DatagridviewProducts";
+            this.DatagridviewProducts.ReadOnly = true;
+            this.DatagridviewProducts.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DatagridviewProducts.RowHeadersVisible = false;
+            this.DatagridviewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DatagridviewProducts.Size = new System.Drawing.Size(632, 510);
+            this.DatagridviewProducts.TabIndex = 4;
+            this.DatagridviewProducts.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DatagreedviewProducts_DataBindingComplete);
+            this.DatagridviewProducts.SelectionChanged += new System.EventHandler(this.DatagreedviewProducts_SelectionChanged);
             // 
             // UserControlProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.DatagreedviewProducts);
+            this.Controls.Add(this.DatagridviewProducts);
             this.Controls.Add(this.GroupboxSearch);
             this.Name = "UserControlProducts";
             this.Size = new System.Drawing.Size(1132, 655);
             this.Load += new System.EventHandler(this.UserControlProducts_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DatagreedviewProducts)).EndInit();
             this.GroupboxSearch.ResumeLayout(false);
             this.GroupboxSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DatagridviewProducts)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -470,22 +416,17 @@ namespace UI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TextBoxCode;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView DatagreedviewProducts;
         private System.Windows.Forms.GroupBox GroupboxSearch;
         private System.Windows.Forms.Button ButtonClearSearch;
         private System.Windows.Forms.Button ButtonSearch;
         private System.Windows.Forms.TextBox TextBoxSearch;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn productName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TextBoxName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TextBoxQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
+        private System.Windows.Forms.DataGridView DatagridviewProducts;
     }
 }

@@ -78,6 +78,7 @@
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.28\lib\net48\Ubiety.Dns.Core.dll</HintPath>
     </Reference>
@@ -94,10 +95,12 @@
     <Compile Include="Business Layer\Product.cs" />
     <Compile Include="Data Layer\DbConnection.cs" />
     <Compile Include="Data Layer\DbEmployees.cs" />
+    <Compile Include="Data Layer\DbPOS.cs" />
     <Compile Include="Data Layer\DbProducts.cs" />
     <Compile Include="Data Layer\DbStock.cs" />
     <Compile Include="Data Layer\DbUsers.cs" />
-    <Compile Include="Extension\ExtensionsMethods.cs" />
+    <Compile Include="Helper Methods\ExtensionsMethods.cs" />
+    <Compile Include="Helper Methods\UtilitiesMethods.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

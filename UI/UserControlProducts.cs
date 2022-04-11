@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logic.Business_Layer;
 using Logic.Data_Layer;
+using Logic.HelperMethods;
 
 namespace UI
 {
@@ -28,17 +29,17 @@ namespace UI
 
         private void UserControlProducts_Load(object sender, EventArgs e)
         {
-            DatagreedviewProducts.DataSource = DbProducts.GetAllProducts();
+            DatagridviewProducts.DataSource = DbProducts.GetAllProducts();
         }
 
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
-            DatagreedviewProducts.DataSource = DbProducts.SearchProduct(itemToSearch);
+            DatagridviewProducts.DataSource = DbProducts.SearchProduct(itemToSearch);
         }
 
         private void ButtonClearSearch_Click(object sender, EventArgs e)
         {
-            DatagreedviewProducts.DataSource = DbProducts.GetAllProducts();
+            DatagridviewProducts.DataSource = DbProducts.GetAllProducts();
         }
 
         private void TextBoxSearch_Enter(object sender, EventArgs e)
@@ -94,7 +95,7 @@ namespace UI
 
                 if (DbProducts.AddProduct(newProduct))
                 {
-                    DatagreedviewProducts.DataSource = DbProducts.GetAllProducts();
+                    DatagridviewProducts.DataSource = DbProducts.GetAllProducts();
                     messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Success, FormMessageBox.eMessageBoxTypes.ProductAddedSuccessfully);
                     clearFields();
                 }
@@ -129,15 +130,7 @@ namespace UI
 
         private void TextBoxPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
+            UtilitiesMethods.OnlyDigitsAllowed(sender as TextBox, e, UtilitiesMethods.eNumberType.RationalNumber);
         }
 
         private void ButtonDeleteProduct_Click(object sender, EventArgs e)
@@ -146,7 +139,7 @@ namespace UI
             {
                 DbProducts.DeleteProduct(TextBoxCode.Text);
                 clearFields();
-                DatagreedviewProducts.DataSource = DbProducts.GetAllProducts();
+                DatagridviewProducts.DataSource = DbProducts.GetAllProducts();
             }
             else
             {
@@ -164,7 +157,7 @@ namespace UI
                 if (DbProducts.UpdateProduct(productToUpdate))
                 {
                     messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Success, FormMessageBox.eMessageBoxTypes.ProductUpdatedSuccessfully);
-                    DatagreedviewProducts.DataSource = DbProducts.GetAllProducts();
+                    DatagridviewProducts.DataSource = DbProducts.GetAllProducts();
                 }
             }
             else
@@ -175,14 +168,14 @@ namespace UI
 
         private void DatagreedviewProducts_SelectionChanged(object sender, EventArgs e)
         {
-            if (DatagreedviewProducts.SelectedRows.Count > 0)
+            if (DatagridviewProducts.SelectedRows.Count > 0)
             {
-                TextBoxCode.Text = DatagreedviewProducts.SelectedRows[0].Cells[1].Value.ToString();
-                TextBoxName.Text = DatagreedviewProducts.SelectedRows[0].Cells[2].Value.ToString();
-                TextBoxDescription.Text = DatagreedviewProducts.SelectedRows[0].Cells[3].Value.ToString();
+                TextBoxCode.Text = DatagridviewProducts.SelectedRows[0].Cells[1].Value.ToString();
+                TextBoxName.Text = DatagridviewProducts.SelectedRows[0].Cells[2].Value.ToString();
+                TextBoxDescription.Text = DatagridviewProducts.SelectedRows[0].Cells[3].Value.ToString();
                 ComboBoxCategory.SelectedIndex = ComboBoxCategory.
-                    FindStringExact(DatagreedviewProducts.SelectedRows[0].Cells[4].Value.ToString());
-                TextBoxPrice.Text = DatagreedviewProducts.SelectedRows[0].Cells[5].Value.ToString();
+                    FindStringExact(DatagridviewProducts.SelectedRows[0].Cells[4].Value.ToString());
+                TextBoxPrice.Text = DatagridviewProducts.SelectedRows[0].Cells[5].Value.ToString();
                 TextBoxQuantity.Enabled = false;
                 TextBoxQuantity.BackColor = SystemColors.ControlLight;
             }
@@ -190,8 +183,13 @@ namespace UI
 
         private void DatagreedviewProducts_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            DatagreedviewProducts.ClearSelection();
+            DatagridviewProducts.ClearSelection();
             clearFields();
+        }
+
+        private void TextBoxQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            UtilitiesMethods.OnlyDigitsAllowed(sender as TextBox, e, UtilitiesMethods.eNumberType.WholeNumber);
         }
     }
 }

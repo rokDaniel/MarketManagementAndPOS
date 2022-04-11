@@ -29,8 +29,8 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GroupboxSearch = new System.Windows.Forms.GroupBox();
             this.ButtonClearSearch = new System.Windows.Forms.Button();
             this.ComboBoxRole = new System.Windows.Forms.ComboBox();
@@ -38,7 +38,7 @@ namespace UI
             this.ButtonSearch = new System.Windows.Forms.Button();
             this.TextBoxSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.DatagreedviewEmployees = new System.Windows.Forms.DataGridView();
+            this.DatagridviewEmployees = new System.Windows.Forms.DataGridView();
             this.StaffID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Adress = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,7 +70,7 @@ namespace UI
             this.TextBoxID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.GroupboxSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DatagreedviewEmployees)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DatagridviewEmployees)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -171,21 +171,21 @@ namespace UI
             this.label1.TabIndex = 0;
             this.label1.Text = "Search by name";
             // 
-            // DatagreedviewEmployees
+            // DatagridviewEmployees
             // 
-            this.DatagreedviewEmployees.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.DatagreedviewEmployees.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            this.DatagreedviewEmployees.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DatagreedviewEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.DatagreedviewEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DatagreedviewEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DatagridviewEmployees.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.DatagridviewEmployees.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            this.DatagridviewEmployees.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DatagridviewEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DatagridviewEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DatagridviewEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StaffID,
             this.FullName,
             this.Adress,
@@ -193,28 +193,28 @@ namespace UI
             this.Role,
             this.Username,
             this.Status});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DatagreedviewEmployees.DefaultCellStyle = dataGridViewCellStyle4;
-            this.DatagreedviewEmployees.EnableHeadersVisualStyles = false;
-            this.DatagreedviewEmployees.GridColor = System.Drawing.SystemColors.Control;
-            this.DatagreedviewEmployees.Location = new System.Drawing.Point(32, 117);
-            this.DatagreedviewEmployees.Margin = new System.Windows.Forms.Padding(0);
-            this.DatagreedviewEmployees.MultiSelect = false;
-            this.DatagreedviewEmployees.Name = "DatagreedviewEmployees";
-            this.DatagreedviewEmployees.ReadOnly = true;
-            this.DatagreedviewEmployees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DatagreedviewEmployees.RowHeadersVisible = false;
-            this.DatagreedviewEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DatagreedviewEmployees.Size = new System.Drawing.Size(642, 510);
-            this.DatagreedviewEmployees.TabIndex = 1;
-            this.DatagreedviewEmployees.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DatagreedviewEmployees_DataBindingComplete);
-            this.DatagreedviewEmployees.SelectionChanged += new System.EventHandler(this.DatagreedviewEmployees_SelectionChanged);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DatagridviewEmployees.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DatagridviewEmployees.EnableHeadersVisualStyles = false;
+            this.DatagridviewEmployees.GridColor = System.Drawing.SystemColors.Control;
+            this.DatagridviewEmployees.Location = new System.Drawing.Point(32, 117);
+            this.DatagridviewEmployees.Margin = new System.Windows.Forms.Padding(0);
+            this.DatagridviewEmployees.MultiSelect = false;
+            this.DatagridviewEmployees.Name = "DatagridviewEmployees";
+            this.DatagridviewEmployees.ReadOnly = true;
+            this.DatagridviewEmployees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DatagridviewEmployees.RowHeadersVisible = false;
+            this.DatagridviewEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DatagridviewEmployees.Size = new System.Drawing.Size(642, 510);
+            this.DatagridviewEmployees.TabIndex = 1;
+            this.DatagridviewEmployees.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DatagreedviewEmployees_DataBindingComplete);
+            this.DatagridviewEmployees.SelectionChanged += new System.EventHandler(this.DatagreedviewEmployees_SelectionChanged);
             // 
             // StaffID
             // 
@@ -476,6 +476,7 @@ namespace UI
             this.TextBoxNumber.Name = "TextBoxNumber";
             this.TextBoxNumber.Size = new System.Drawing.Size(278, 25);
             this.TextBoxNumber.TabIndex = 8;
+            this.TextBoxNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNumber_KeyPress);
             // 
             // label6
             // 
@@ -550,14 +551,14 @@ namespace UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.DatagreedviewEmployees);
+            this.Controls.Add(this.DatagridviewEmployees);
             this.Controls.Add(this.GroupboxSearch);
             this.Name = "UserControlStaff";
             this.Size = new System.Drawing.Size(1132, 655);
             this.Load += new System.EventHandler(this.UserControlStaff_Load);
             this.GroupboxSearch.ResumeLayout(false);
             this.GroupboxSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DatagreedviewEmployees)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DatagridviewEmployees)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -572,7 +573,7 @@ namespace UI
         private System.Windows.Forms.Button ButtonSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox ComboBoxRole;
-        private System.Windows.Forms.DataGridView DatagreedviewEmployees;
+        private System.Windows.Forms.DataGridView DatagridviewEmployees;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label10;
@@ -596,6 +597,7 @@ namespace UI
         private System.Windows.Forms.Button ButtonAddEmployee;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button ButtonClearSearch;
+        private System.Windows.Forms.Button ButtonDeleteEmployee;
         private System.Windows.Forms.DataGridViewTextBoxColumn StaffID;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Adress;
@@ -603,6 +605,5 @@ namespace UI
         private System.Windows.Forms.DataGridViewTextBoxColumn Role;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.Button ButtonDeleteEmployee;
     }
 }

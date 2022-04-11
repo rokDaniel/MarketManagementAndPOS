@@ -15,8 +15,9 @@ namespace Logic.Business_Layer
             FruitsAndVegetables,
             Diary,
             BakedAndBread,
-            AlcoholAndBeverage,
-            CookingAndBaking
+            Meat,
+            AlcoholAndBeverages,
+            Cooking
         }
 
         public string Code { get; set; }
@@ -25,6 +26,10 @@ namespace Logic.Business_Layer
         public eCategory Category { get; set; }
         public float Price { get; set; }
         public int Quantity { get; set; }
+
+        public Product()
+        {
+        }
 
         public Product(string productName, string productDescription, int productQuantity, int productCategory, float productPrice)
         {

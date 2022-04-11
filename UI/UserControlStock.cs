@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logic.Data_Layer;
+using Logic.HelperMethods;
 
 namespace UI
 {
@@ -48,8 +49,8 @@ namespace UI
 
         private void UserControlStock_Load(object sender, EventArgs e)
         {
-            DatagreedviewStock.DataSource = DbStock.GetStock();
-            DataGreedViewOrder.DataSource = ProductsToOrder;
+            DatagridviewStock.DataSource = DbStock.GetStock();
+            DataGridViewOrder.DataSource = ProductsToOrder;
         }
 
         private void TextBoxSearch_Enter(object sender, EventArgs e)
@@ -67,12 +68,12 @@ namespace UI
 
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
-            DatagreedviewStock.DataSource = DbStock.SearchProduct(itemToSearch);
+            DatagridviewStock.DataSource = DbStock.SearchProduct(itemToSearch);
         }
 
         private void ButtonClearSearch_Click(object sender, EventArgs e)
         {
-            DatagreedviewStock.DataSource = DbStock.GetStock();
+            DatagridviewStock.DataSource = DbStock.GetStock();
         }
 
         private void TextBoxQuantity_Enter(object sender, EventArgs e)
@@ -122,7 +123,7 @@ namespace UI
 
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            if (DatagreedviewStock.SelectedRows.Count > 0) {
+            if (DatagridviewStock.SelectedRows.Count > 0) {
                 DataRow newProductOrder = ProductsToOrder.NewRow();
 
                 newProductOrder["#"] = currentPruductNumber;
@@ -136,12 +137,12 @@ namespace UI
 
         private void DatagreedviewStock_SelectionChanged(object sender, EventArgs e)
         {
-            if (DatagreedviewStock.SelectedRows.Count > 0)
+            if (DatagridviewStock.SelectedRows.Count > 0)
             {
-                currentPruductNumber = int.Parse(DatagreedviewStock.SelectedRows[0].Cells[0].Value.ToString());
-                currentProductCode = DatagreedviewStock.SelectedRows[0].Cells[1].Value.ToString();
-                currentProductName = DatagreedviewStock.SelectedRows[0].Cells[2].Value.ToString();
-                currentProductDescription = DatagreedviewStock.SelectedRows[0].Cells[3].Value.ToString();
+                currentPruductNumber = int.Parse(DatagridviewStock.SelectedRows[0].Cells[0].Value.ToString());
+                currentProductCode = DatagridviewStock.SelectedRows[0].Cells[1].Value.ToString();
+                currentProductName = DatagridviewStock.SelectedRows[0].Cells[2].Value.ToString();
+                currentProductDescription = DatagridviewStock.SelectedRows[0].Cells[3].Value.ToString();
 
                 TextBoxCode.Text = currentProductCode;
                 TextBoxName.Text = currentProductName;
@@ -151,15 +152,7 @@ namespace UI
 
         private void TextBoxQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
+            UtilitiesMethods.OnlyDigitsAllowed(sender as TextBox, e, UtilitiesMethods.eNumberType.WholeNumber);
         }
 
         private void ButtonCommitOrder_Click(object sender, EventArgs e)
@@ -169,7 +162,7 @@ namespace UI
                 DbStock.updateQuantity(row["Code"].ToString(), int.Parse(row["Quantity"].ToString()));
             }
 
-            DatagreedviewStock.DataSource = DbStock.GetStock();
+            DatagridviewStock.DataSource = DbStock.GetStock();
             ProductsToOrder.Rows.Clear();
 
             messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Success, FormMessageBox.eMessageBoxTypes.StockHasBeenAdded);
@@ -177,12 +170,12 @@ namespace UI
 
         private void UserControlStock_VisibleChanged(object sender, EventArgs e)
         {
-            DatagreedviewStock.DataSource = DbStock.GetStock();
+            DatagridviewStock.DataSource = DbStock.GetStock();
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
-            selectedProductCode = DataGreedViewOrder.SelectedRows[0].Cells[2].Value.ToString();
+            selectedProductCode = DataGridViewOrder.SelectedRows[0].Cells[2].Value.ToString();
             foreach (DataRow row in ProductsToOrder.Rows)
             {
                 if ((string)row["Code"] == selectedProductCode)
@@ -193,7 +186,7 @@ namespace UI
             }
 
             ProductsToOrder.AcceptChanges();
-            DataGreedViewOrder.DataSource = ProductsToOrder;
+            DataGridViewOrder.DataSource = ProductsToOrder;
         }
     }
 }

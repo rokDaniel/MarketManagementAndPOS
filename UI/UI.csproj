@@ -38,6 +38,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="FormDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDiscount.Designer.cs">
+      <DependentUpon>FormDiscount.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +61,18 @@
     </Compile>
     <Compile Include="FormMessageBox.Designer.cs">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrderQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrderQuantity.Designer.cs">
+      <DependentUpon>FormOrderQuantity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSearchProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSearchProduct.Designer.cs">
+      <DependentUpon>FormSearchProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -209,6 +227,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormDiscount.resx">
+      <DependentUpon>FormDiscount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +238,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMessageBox.resx">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrderQuantity.resx">
+      <DependentUpon>FormOrderQuantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSearchProduct.resx">
+      <DependentUpon>FormSearchProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -323,6 +350,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\IconWarning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconShoppingCart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconDollarSign2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconShoppingCart2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconDiscount2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconCreditCard2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconClearCart2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

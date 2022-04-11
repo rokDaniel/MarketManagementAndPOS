@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logic.Business_Layer;
 using Logic.Data_Layer;
+using Logic.HelperMethods;
 
 namespace UI
 {
@@ -28,18 +29,18 @@ namespace UI
 
         private void UserControlStaff_Load(object sender, EventArgs e)
         {
-            DatagreedviewEmployees.DataSource = DbEmployees.GetAllEmployees();
+            DatagridviewEmployees.DataSource = DbEmployees.GetAllEmployees();
         }
 
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
-            DatagreedviewEmployees.DataSource = DbEmployees.SearchEmployee(nameToSearch, DbEmployees.eSearchType.Name);
+            DatagridviewEmployees.DataSource = DbEmployees.SearchEmployee(nameToSearch, DbEmployees.eSearchType.Name);
             nameToSearch = string.Empty;
         }
 
         private void ButtonClearSearch_Click(object sender, EventArgs e)
         {
-            DatagreedviewEmployees.DataSource = DbEmployees.GetAllEmployees();
+            DatagridviewEmployees.DataSource = DbEmployees.GetAllEmployees();
         }
 
         private void TextBoxSearch_Enter(object sender, EventArgs e)
@@ -63,7 +64,7 @@ namespace UI
 
         private void ComboBoxRole_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DatagreedviewEmployees.DataSource = DbEmployees.SearchEmployee(ComboBoxRole.Text, DbEmployees.eSearchType.Role);
+            DatagridviewEmployees.DataSource = DbEmployees.SearchEmployee(ComboBoxRole.Text, DbEmployees.eSearchType.Role);
         }
 
         private void TextBoxSearch_KeyDown(object sender, KeyEventArgs e)
@@ -119,7 +120,7 @@ namespace UI
             }
             else
             {
-                DatagreedviewEmployees.DataSource = DbEmployees.GetAllEmployees();
+                DatagridviewEmployees.DataSource = DbEmployees.GetAllEmployees();
                 messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Success, FormMessageBox.eMessageBoxTypes.EmployeeAddedSuccessfully);
                 clearFields();
             }
@@ -136,7 +137,7 @@ namespace UI
             {
                 DbEmployees.DeleteEmployee(int.Parse(TextBoxID.Text));
                 clearFields();
-                DatagreedviewEmployees.DataSource = DbEmployees.GetAllEmployees();
+                DatagridviewEmployees.DataSource = DbEmployees.GetAllEmployees();
             }
             else
             {
@@ -146,24 +147,24 @@ namespace UI
 
         private void DatagreedviewEmployees_SelectionChanged(object sender, EventArgs e)
         {
-            if (DatagreedviewEmployees.SelectedRows.Count > 0)
+            if (DatagridviewEmployees.SelectedRows.Count > 0)
             {
-                TextBoxID.Text = DatagreedviewEmployees.SelectedRows[0].Cells[0].Value.ToString();
-                TextBoxFullName.Text = DatagreedviewEmployees.SelectedRows[0].Cells[1].Value.ToString();
-                TextBoxAddress.Text = DatagreedviewEmployees.SelectedRows[0].Cells[2].Value.ToString();
-                TextBoxNumber.Text = DatagreedviewEmployees.SelectedRows[0].Cells[3].Value.ToString();
-                TextBoxUsername.Text = DatagreedviewEmployees.SelectedRows[0].Cells[5].Value.ToString();
+                TextBoxID.Text = DatagridviewEmployees.SelectedRows[0].Cells[0].Value.ToString();
+                TextBoxFullName.Text = DatagridviewEmployees.SelectedRows[0].Cells[1].Value.ToString();
+                TextBoxAddress.Text = DatagridviewEmployees.SelectedRows[0].Cells[2].Value.ToString();
+                TextBoxNumber.Text = DatagridviewEmployees.SelectedRows[0].Cells[3].Value.ToString();
+                TextBoxUsername.Text = DatagridviewEmployees.SelectedRows[0].Cells[5].Value.ToString();
                 TextBoxPassword.Text = "****";
                 ComboBoxEmployeeRole.SelectedIndex = ComboBoxEmployeeRole.
-                    FindStringExact(DatagreedviewEmployees.SelectedRows[0].Cells[4].Value.ToString());
+                    FindStringExact(DatagridviewEmployees.SelectedRows[0].Cells[4].Value.ToString());
                 comboBoxEmployeeStatus.SelectedIndex = comboBoxEmployeeStatus.
-                    FindStringExact(DatagreedviewEmployees.SelectedRows[0].Cells[6].Value.ToString());
+                    FindStringExact(DatagridviewEmployees.SelectedRows[0].Cells[6].Value.ToString());
             }
         }
 
         private void DatagreedviewEmployees_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            DatagreedviewEmployees.ClearSelection();
+            DatagridviewEmployees.ClearSelection();
             clearFields();
         }
 
@@ -177,7 +178,7 @@ namespace UI
                 if (DbEmployees.UpdateEmployee(employeeToUpdate))
                 {
                     messageBoxForm.ShowMessageBox(FormMessageBox.eMessageBoxGroups.Success, FormMessageBox.eMessageBoxTypes.EmployeeUpdatedSuccessfully);
-                    DatagreedviewEmployees.DataSource = DbEmployees.GetAllEmployees();
+                    DatagridviewEmployees.DataSource = DbEmployees.GetAllEmployees();
                 }
             }
             else
@@ -197,6 +198,11 @@ namespace UI
             }
 
             return true;
+        }
+
+        private void TextBoxNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            UtilitiesMethods.OnlyDigitsAllowed(sender as TextBox, e, UtilitiesMethods.eNumberType.WholeNumber);
         }
     }
 }

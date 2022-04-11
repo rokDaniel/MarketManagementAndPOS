@@ -73,6 +73,46 @@ namespace UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IconClearCart2 {
+            get {
+                object obj = ResourceManager.GetObject("IconClearCart2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconCreditCard2 {
+            get {
+                object obj = ResourceManager.GetObject("IconCreditCard2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconDiscount2 {
+            get {
+                object obj = ResourceManager.GetObject("IconDiscount2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconDollarSign2 {
+            get {
+                object obj = ResourceManager.GetObject("IconDollarSign2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IconError {
             get {
                 object obj = ResourceManager.GetObject("IconError", resourceCulture);
@@ -246,6 +286,26 @@ namespace UI.Properties {
         internal static System.Drawing.Bitmap IconReports2 {
             get {
                 object obj = ResourceManager.GetObject("IconReports2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconShoppingCart {
+            get {
+                object obj = ResourceManager.GetObject("IconShoppingCart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconShoppingCart2 {
+            get {
+                object obj = ResourceManager.GetObject("IconShoppingCart2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

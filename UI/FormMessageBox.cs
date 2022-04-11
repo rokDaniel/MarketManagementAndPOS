@@ -39,7 +39,10 @@ namespace UI
             ItemWasNotSelected,
             WorkerWasNotSelected,
             ProductUpdatedSuccessfully,
-            StockHasBeenAdded
+            StockHasBeenAdded,
+            EnterValidNumber,
+            NotEnoughInStock,
+            ApplyFirst
         }
 
         public FormMessageBox()
@@ -99,6 +102,10 @@ namespace UI
                     messageTitle = "Worker was not selected!";
                     messageText = "Please select a worker.";
                     break;
+                case eMessageBoxTypes.EnterValidNumber:
+                    messageTitle = "Enter Valid Number!";
+                    messageText = "Please enter a number greater than 0.";
+                    break;
             }
         }
 
@@ -121,6 +128,14 @@ namespace UI
                 case eMessageBoxTypes.ProductCouldNotBeAdded:
                     messageTitle = "Product could not be added!";
                     messageText = "Product could not be added!";
+                    break;
+                case eMessageBoxTypes.NotEnoughInStock:
+                    messageTitle = "Not enough units in stock!";
+                    messageText = "There are not enough units of the desired product.";
+                    break;
+                case eMessageBoxTypes.ApplyFirst:
+                    messageTitle = "Apply discount!";
+                    messageText = "Please apply your discount before confirming it.";
                     break;
             }
         }

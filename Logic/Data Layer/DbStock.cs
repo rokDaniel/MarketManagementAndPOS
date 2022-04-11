@@ -34,6 +34,35 @@ namespace Logic.Data_Layer
             return stock;
         }
 
+        public static int GetProductQuantity(string code)
+        {
+            int quantity = 0;
+
+            query = string.Format("SELECT quantity FROM minimarket_db.stock WHERE code = '{0}'", code);
+            sqlConnection = DbConnection.GetConnection();
+            sqlCmd.Connection = sqlConnection;
+            sqlCmd.CommandText = query;
+            sqlDataReader = sqlCmd.ExecuteReader();
+            if (sqlDataReader.Read())
+            {
+                quantity = int.Parse(sqlDataReader.GetString(0));      
+            }
+
+            sqlConnection.Close();
+
+            return quantity;
+        }
+
+        public static void ReduceProductQuantity(string code, int quantity)
+        {
+            query = string.Format("UPDATE minimarket_db.stock SET quantity = quantity - {0} WHERE code = '{1}'", quantity, code);
+            sqlConnection = DbConnection.GetConnection();
+            sqlCmd.Connection = sqlConnection;
+            sqlCmd.CommandText = query;
+            sqlCmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
         public static DataTable SearchProduct(string search)
         {
             query = string.Format("SELECT * FROM minimarket_db.stock WHERE product_name LIKE '%{0}%' OR code LIKE '%{0}%'", search);
