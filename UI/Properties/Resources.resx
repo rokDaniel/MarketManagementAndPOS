@@ -124,8 +124,8 @@
   <data name="IconReports2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconReports2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconCreditCard2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconCreditCard2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconClearCart2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconClearCart2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,8 +142,8 @@
   <data name="PersonIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PersonIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconReports" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconReports.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconPOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconPOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconManageStaff2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconManageStaff2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,11 +151,17 @@
   <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconShoppingCart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconShoppingCart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="transactions v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transactions v2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconManageStock2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconManageStock2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconShoppingCart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconShoppingCart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconErrorBig" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconErrorBig.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconManageProducts" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconManageProducts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,11 +175,17 @@
   <data name="IconWarning" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconWarning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconHome2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconHome2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="transactions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transactions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconLogOut2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconLogOut2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="transaction v4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transaction v4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LockIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LockIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,14 +196,17 @@
   <data name="IconManageStaff" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconManageStaff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="transaction v6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transaction v6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="IconDiscount2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconDiscount2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconManageStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconManageStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconErrorBig" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconErrorBig.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconCreditCard2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconCreditCard2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconLogOut" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconLogOut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,16 +214,28 @@
   <data name="IconHome1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconHome1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="transaction v3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transaction v3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="IconManageStaff3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconManageStaff3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconPOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconPOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconReports" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconReports.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconHome2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconHome2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconShoppingCart2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconShoppingCart2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconClearCart2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconClearCart2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="transaction v5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transaction v5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="totalSales" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\totalSales.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cart v2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cart v2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

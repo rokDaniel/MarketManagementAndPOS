@@ -33,7 +33,6 @@ namespace UI
             this.panel1 = new System.Windows.Forms.Panel();
             this.ButtonLogout = new System.Windows.Forms.Button();
             this.ButtonPos = new System.Windows.Forms.Button();
-            this.ButtonReports = new System.Windows.Forms.Button();
             this.ButtonManageStock = new System.Windows.Forms.Button();
             this.ButtonManageProducts = new System.Windows.Forms.Button();
             this.ButtonHomePage = new System.Windows.Forms.Button();
@@ -48,7 +47,6 @@ namespace UI
             this.userControlStaff1 = new UI.UserControlStaff();
             this.userControlProducts1 = new UI.UserControlProducts();
             this.userControlStock1 = new UI.UserControlStock();
-            this.userControlReports1 = new UI.UserControlReports();
             this.userControlPOS1 = new UI.UserControlPOS();
             this.panel1.SuspendLayout();
             this.PanelTop.SuspendLayout();
@@ -59,7 +57,6 @@ namespace UI
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.panel1.Controls.Add(this.ButtonLogout);
             this.panel1.Controls.Add(this.ButtonPos);
-            this.panel1.Controls.Add(this.ButtonReports);
             this.panel1.Controls.Add(this.ButtonManageStock);
             this.panel1.Controls.Add(this.ButtonManageProducts);
             this.panel1.Controls.Add(this.ButtonHomePage);
@@ -97,7 +94,7 @@ namespace UI
             this.ButtonPos.ForeColor = System.Drawing.Color.White;
             this.ButtonPos.Image = global::UI.Properties.Resources.IconPOS2;
             this.ButtonPos.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ButtonPos.Location = new System.Drawing.Point(10, 334);
+            this.ButtonPos.Location = new System.Drawing.Point(10, 286);
             this.ButtonPos.Name = "ButtonPos";
             this.ButtonPos.Size = new System.Drawing.Size(205, 42);
             this.ButtonPos.TabIndex = 5;
@@ -107,25 +104,6 @@ namespace UI
             this.ButtonPos.UseVisualStyleBackColor = true;
             this.ButtonPos.Click += new System.EventHandler(this.ButtonPos_Click);
             this.ButtonPos.Leave += new System.EventHandler(this.ButtonPos_Leave);
-            // 
-            // ButtonReports
-            // 
-            this.ButtonReports.FlatAppearance.BorderSize = 0;
-            this.ButtonReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonReports.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonReports.ForeColor = System.Drawing.Color.White;
-            this.ButtonReports.Image = global::UI.Properties.Resources.IconReports2;
-            this.ButtonReports.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.ButtonReports.Location = new System.Drawing.Point(10, 286);
-            this.ButtonReports.Name = "ButtonReports";
-            this.ButtonReports.Size = new System.Drawing.Size(205, 42);
-            this.ButtonReports.TabIndex = 4;
-            this.ButtonReports.Text = "Reports";
-            this.ButtonReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonReports.UseVisualStyleBackColor = true;
-            this.ButtonReports.Click += new System.EventHandler(this.ButtonReports_Click);
-            this.ButtonReports.Leave += new System.EventHandler(this.ButtonReports_Leave);
             // 
             // ButtonManageStock
             // 
@@ -287,15 +265,10 @@ namespace UI
             this.userControlStock1.Size = new System.Drawing.Size(1132, 655);
             this.userControlStock1.TabIndex = 6;
             // 
-            // userControlReports1
-            // 
-            this.userControlReports1.Location = new System.Drawing.Point(214, 47);
-            this.userControlReports1.Name = "userControlReports1";
-            this.userControlReports1.Size = new System.Drawing.Size(1132, 655);
-            this.userControlReports1.TabIndex = 7;
-            // 
             // userControlPOS1
             // 
+            this.userControlPOS1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
+            this.userControlPOS1.LabelBeforeVatText = "0.00";
             this.userControlPOS1.Location = new System.Drawing.Point(214, 47);
             this.userControlPOS1.Name = "userControlPOS1";
             this.userControlPOS1.Size = new System.Drawing.Size(1132, 655);
@@ -307,7 +280,6 @@ namespace UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1345, 702);
             this.Controls.Add(this.userControlPOS1);
-            this.Controls.Add(this.userControlReports1);
             this.Controls.Add(this.userControlStock1);
             this.Controls.Add(this.userControlProducts1);
             this.Controls.Add(this.userControlStaff1);
@@ -339,7 +311,6 @@ namespace UI
         private System.Windows.Forms.Button ButtonManageProducts;
         private System.Windows.Forms.Button ButtonLogout;
         private System.Windows.Forms.Button ButtonPos;
-        private System.Windows.Forms.Button ButtonReports;
         private System.Windows.Forms.Button ButtonHomePage;
         private System.Windows.Forms.Panel NavIndicator;
         private UserControlHome userControlHome1;
@@ -347,7 +318,6 @@ namespace UI
         private UserControlStaff userControlStaff1;
         private UserControlProducts userControlProducts1;
         private UserControlStock userControlStock1;
-        private UserControlReports userControlReports1;
         private UserControlPOS userControlPOS1;
     }
 }

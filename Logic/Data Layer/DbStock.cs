@@ -16,6 +16,7 @@ namespace Logic.Data_Layer
         private static MySqlCommand sqlCmd = new MySqlCommand();
         private static MySqlDataReader sqlDataReader;
         private static DataTable stock = new DataTable();
+        private static DataTable missings = new DataTable();
         private static string query;
 
         public static DataTable GetStock()
@@ -32,6 +33,22 @@ namespace Logic.Data_Layer
             sqlConnection.Close();
 
             return stock;
+        }
+
+        public static DataTable GetMissingSupplies()
+        {
+            query = "SELECT product_name, quantity FROM minimarket_db.stock WHERE quantity < 10";
+
+            missings.Clear();
+            sqlConnection = DbConnection.GetConnection();
+            sqlCmd.Connection = sqlConnection;
+            sqlCmd.CommandText = query;
+            sqlDataReader = sqlCmd.ExecuteReader();
+            missings.Load(sqlDataReader);
+
+            sqlConnection.Close();
+
+            return missings;
         }
 
         public static int GetProductQuantity(string code)

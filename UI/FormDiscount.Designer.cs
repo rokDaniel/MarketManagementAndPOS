@@ -29,9 +29,6 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.PanelTop = new System.Windows.Forms.Panel();
-            this.ButtonExit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,45 +37,11 @@ namespace UI
             this.TextBoxDiscountPrecentage = new System.Windows.Forms.TextBox();
             this.ButtonConfirm = new System.Windows.Forms.Button();
             this.ButtonApply = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ButtonExit = new System.Windows.Forms.Button();
+            this.PanelTop = new System.Windows.Forms.Panel();
             this.PanelTop.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Discount";
-            // 
-            // PanelTop
-            // 
-            this.PanelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
-            this.PanelTop.Controls.Add(this.ButtonExit);
-            this.PanelTop.Controls.Add(this.label1);
-            this.PanelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelTop.Location = new System.Drawing.Point(0, 0);
-            this.PanelTop.Name = "PanelTop";
-            this.PanelTop.Size = new System.Drawing.Size(468, 36);
-            this.PanelTop.TabIndex = 1;
-            this.PanelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelTop_MouseDown);
-            // 
-            // ButtonExit
-            // 
-            this.ButtonExit.FlatAppearance.BorderSize = 0;
-            this.ButtonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonExit.ForeColor = System.Drawing.Color.White;
-            this.ButtonExit.Location = new System.Drawing.Point(435, 3);
-            this.ButtonExit.Name = "ButtonExit";
-            this.ButtonExit.Size = new System.Drawing.Size(30, 30);
-            this.ButtonExit.TabIndex = 2;
-            this.ButtonExit.Text = "X";
-            this.ButtonExit.UseVisualStyleBackColor = true;
-            this.ButtonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // label2
             // 
@@ -134,7 +97,7 @@ namespace UI
             // 
             // TextBoxDiscountPrecentage
             // 
-            this.TextBoxDiscountPrecentage.BackColor = System.Drawing.SystemColors.Control;
+            this.TextBoxDiscountPrecentage.BackColor = System.Drawing.Color.White;
             this.TextBoxDiscountPrecentage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxDiscountPrecentage.ForeColor = System.Drawing.Color.Silver;
             this.TextBoxDiscountPrecentage.Location = new System.Drawing.Point(173, 98);
@@ -174,6 +137,43 @@ namespace UI
             this.ButtonApply.UseVisualStyleBackColor = false;
             this.ButtonApply.Click += new System.EventHandler(this.ButtonApply_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Discount";
+            // 
+            // ButtonExit
+            // 
+            this.ButtonExit.FlatAppearance.BorderSize = 0;
+            this.ButtonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonExit.ForeColor = System.Drawing.Color.White;
+            this.ButtonExit.Location = new System.Drawing.Point(435, 3);
+            this.ButtonExit.Name = "ButtonExit";
+            this.ButtonExit.Size = new System.Drawing.Size(30, 30);
+            this.ButtonExit.TabIndex = 2;
+            this.ButtonExit.Text = "X";
+            this.ButtonExit.UseVisualStyleBackColor = true;
+            this.ButtonExit.Click += new System.EventHandler(this.ButtonExit_Click);
+            // 
+            // PanelTop
+            // 
+            this.PanelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
+            this.PanelTop.Controls.Add(this.ButtonExit);
+            this.PanelTop.Controls.Add(this.label1);
+            this.PanelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelTop.Location = new System.Drawing.Point(0, 0);
+            this.PanelTop.Name = "PanelTop";
+            this.PanelTop.Size = new System.Drawing.Size(468, 36);
+            this.PanelTop.TabIndex = 1;
+            this.PanelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelTop_MouseDown);
+            // 
             // FormDiscount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,10 +202,6 @@ namespace UI
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel PanelTop;
-        private System.Windows.Forms.Button ButtonExit;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -214,5 +210,8 @@ namespace UI
         private System.Windows.Forms.TextBox TextBoxDiscountPrecentage;
         private System.Windows.Forms.Button ButtonConfirm;
         private System.Windows.Forms.Button ButtonApply;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ButtonExit;
+        private System.Windows.Forms.Panel PanelTop;
     }
 }

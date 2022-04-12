@@ -29,8 +29,8 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DataGridViewCart = new System.Windows.Forms.DataGridView();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,14 +87,14 @@ namespace UI
             this.DataGridViewCart.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGridViewCart.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
             this.DataGridViewCart.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridViewCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridViewCart.ColumnHeadersHeight = 28;
             this.DataGridViewCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DataGridViewCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -106,14 +106,14 @@ namespace UI
             this.UnitPrice,
             this.Discount,
             this.Subtotal});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridViewCart.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridViewCart.DefaultCellStyle = dataGridViewCellStyle2;
             this.DataGridViewCart.EnableHeadersVisualStyles = false;
             this.DataGridViewCart.GridColor = System.Drawing.SystemColors.Control;
             this.DataGridViewCart.Location = new System.Drawing.Point(0, 144);
@@ -262,6 +262,7 @@ namespace UI
             this.ButtonMakePayment.Text = "Payment";
             this.ButtonMakePayment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonMakePayment.UseVisualStyleBackColor = false;
+            this.ButtonMakePayment.Click += new System.EventHandler(this.ButtonMakePayment_Click);
             // 
             // ButtonClearCart
             // 
@@ -279,6 +280,7 @@ namespace UI
             this.ButtonClearCart.Text = "Clear Cart";
             this.ButtonClearCart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonClearCart.UseVisualStyleBackColor = false;
+            this.ButtonClearCart.Click += new System.EventHandler(this.ButtonClearCart_Click);
             // 
             // ButtonNewTransaction
             // 
@@ -449,7 +451,7 @@ namespace UI
             this.LabelTotalBig.AutoSize = true;
             this.LabelTotalBig.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelTotalBig.ForeColor = System.Drawing.Color.LawnGreen;
-            this.LabelTotalBig.Location = new System.Drawing.Point(1011, 13);
+            this.LabelTotalBig.Location = new System.Drawing.Point(1002, 13);
             this.LabelTotalBig.Name = "LabelTotalBig";
             this.LabelTotalBig.Size = new System.Drawing.Size(89, 47);
             this.LabelTotalBig.TabIndex = 8;

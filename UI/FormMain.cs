@@ -168,7 +168,6 @@ namespace UI
             userControlStaff1.Hide();
             userControlProducts1.Hide();
             userControlStock1.Hide();
-            userControlReports1.Hide();
             userControlHome1.Hide();
             userControlPOS1.BringToFront();
         }
@@ -180,8 +179,6 @@ namespace UI
             userControlProducts1.Hide();
             userControlStock1.Hide();
             userControlPOS1.Hide();
-            userControlReports1.Show();
-            userControlReports1.BringToFront();
         }
 
         private void stockPageToFront()
@@ -189,7 +186,6 @@ namespace UI
             userControlHome1.Hide();
             userControlStaff1.Hide();
             userControlProducts1.Hide();
-            userControlReports1.Hide();
             userControlPOS1.Hide();
             userControlStock1.Show();
             userControlStock1.BringToFront();
@@ -200,7 +196,6 @@ namespace UI
             userControlHome1.Hide();
             userControlStaff1.Hide();
             userControlStock1.Hide();
-            userControlReports1.Hide();
             userControlPOS1.Hide();
             userControlProducts1.Show();
             userControlProducts1.BringToFront();
@@ -211,7 +206,6 @@ namespace UI
             userControlHome1.Hide();
             userControlProducts1.Hide();
             userControlStock1.Hide();
-            userControlReports1.Hide();
             userControlPOS1.Hide();
             userControlStaff1.Show();
             userControlStaff1.BringToFront();
@@ -222,7 +216,6 @@ namespace UI
             userControlStaff1.Hide();
             userControlProducts1.Hide();
             userControlStock1.Hide();
-            userControlReports1.Hide();
             userControlPOS1.Hide();
             userControlHome1.Show();
             userControlHome1.BringToFront();

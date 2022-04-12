@@ -19,7 +19,6 @@ namespace UI
         private readonly FormSearchProduct formSearchProduct;
         private int productQuantityToOrder;
         private float totalPrice = 0;
-        private string unitPrice;
 
         public FormOrderQuantity(FormSearchProduct SearchForm, UserControlPOS POS)
         {
@@ -58,9 +57,19 @@ namespace UI
             int quantity = productQuantityToOrder;
             float unitPrice = formSearchProduct.GetProductPrice();
 
+            checkForNewTransaction();
+
             totalPrice += quantity * unitPrice;
 
             return totalPrice.ToString();
+        }
+
+        private void checkForNewTransaction()
+        {
+            if (userControlPOS.LabelTotalPrice == "0.00")
+            {
+                totalPrice = 0;
+            }
         }
 
         private void TextBoxQuantityToOrder_KeyPress(object sender, KeyPressEventArgs e)

@@ -16,8 +16,57 @@ namespace UI
         private const string defaultTransactionNo = "000000000000";
         private FormSearchProduct searchProductForm;
         private FormDiscount discountForm;
+        private FormPayment paymentForm;
         private Random random = new Random();
         private static DataTable shoppingCart;
+        private static float income = 0;
+        private static int totalSold = 0;
+        private static int totalTransactions;
+
+        public static int TotalTransactions
+        {
+            get
+            {
+                return totalTransactions;
+            }
+            set
+            {
+                totalTransactions = value;
+            }
+        }
+
+        public DataTable ShoppingCart
+        {
+            get
+            {
+                return shoppingCart;
+            }
+        }
+
+        public static int TotalSold
+        {
+            get
+            {
+                return totalSold;
+            }
+            set
+            {
+                totalSold = value;
+            }
+        }
+
+        public static float Income
+        {
+            get
+            {
+                return income;
+            }
+            set
+            {
+                income = value;
+            }
+        }
+
         public String LabelBeforeVatText
         {
             get
@@ -52,6 +101,7 @@ namespace UI
             InitializeOrderShoppingCart();
             searchProductForm = new FormSearchProduct(this);
             discountForm = new FormDiscount(this);
+            paymentForm = new FormPayment(this);
         }
 
         private void InitializeOrderShoppingCart()
@@ -80,16 +130,16 @@ namespace UI
         private void ButtonNewTransaction_Click(object sender, EventArgs e)
         {
             LabelTransactionNo.Text = getTransactionNo();
-            handleButtons();
+            changeButtonsStates();
         }
 
-        private void handleButtons()
+        private void changeButtonsStates()
         {
-            ButtonNewTransaction.Enabled = false;
-            ButtonSearchProduct.Enabled = true;
-            ButtonAddDiscount.Enabled = true;
-            ButtonMakePayment.Enabled = true;
-            ButtonClearCart.Enabled = true;
+            ButtonNewTransaction.Enabled = !ButtonNewTransaction.Enabled;
+            ButtonSearchProduct.Enabled = !ButtonSearchProduct.Enabled;
+            ButtonAddDiscount.Enabled = !ButtonAddDiscount.Enabled;
+            ButtonMakePayment.Enabled = !ButtonMakePayment.Enabled;
+            ButtonClearCart.Enabled = !ButtonClearCart.Enabled;
         }
 
         public static void UpdateCart(Product product)
@@ -148,6 +198,36 @@ namespace UI
             float orderPrice = float.Parse(priceLabel.Text);
 
             this.LabelVat.Text = (orderPrice * 0.17).ToString("F2");
+        }
+
+        private void ButtonMakePayment_Click(object sender, EventArgs e)
+        {
+            paymentForm.ShowDialog();
+        }
+
+        public void ClearCart()
+        {
+            shoppingCart.Rows.Clear();
+            shoppingCart.Columns["#"].AutoIncrementStep = -1;
+            shoppingCart.Columns["#"].AutoIncrementSeed = -1;
+            shoppingCart.Columns["#"].AutoIncrementStep = 1;
+            shoppingCart.Columns["#"].AutoIncrementSeed = -1;
+            DataGridViewCart.Update();
+            DataGridViewCart.Refresh();
+
+            LabelTotalBig.Text = "0.00";
+            LabelTotalSmall.Text = "0.00";
+            LabelDiscount.Text = "0.00";
+            LabelVat.Text = "0.00";
+            LabelBeforeVat.Text = "0.00";
+
+            LabelTransactionNo.Text = defaultTransactionNo;
+            changeButtonsStates();
+        }
+
+        private void ButtonClearCart_Click(object sender, EventArgs e)
+        {
+            ClearCart();
         }
     }
 }

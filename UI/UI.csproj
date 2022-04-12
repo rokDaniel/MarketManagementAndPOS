@@ -68,6 +68,12 @@
     <Compile Include="FormOrderQuantity.Designer.cs">
       <DependentUpon>FormOrderQuantity.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPayment.Designer.cs">
+      <DependentUpon>FormPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSearchProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,12 +103,6 @@
     </Compile>
     <Compile Include="UserControlProducts.Designer.cs">
       <DependentUpon>UserControlProducts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlReports.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlReports.Designer.cs">
-      <DependentUpon>UserControlReports.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlStaff.cs">
       <SubType>UserControl</SubType>
@@ -242,6 +242,9 @@
     <EmbeddedResource Include="FormOrderQuantity.resx">
       <DependentUpon>FormOrderQuantity.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPayment.resx">
+      <DependentUpon>FormPayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSearchProduct.resx">
       <DependentUpon>FormSearchProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,9 +260,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlProducts.resx">
       <DependentUpon>UserControlProducts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlReports.resx">
-      <DependentUpon>UserControlReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlStaff.resx">
       <DependentUpon>UserControlStaff.cs</DependentUpon>
@@ -368,6 +368,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\IconClearCart2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\totalSales.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transactions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transactions v2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaction v3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaction v4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaction v5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaction v6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart v2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
