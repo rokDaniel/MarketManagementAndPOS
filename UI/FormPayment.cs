@@ -31,8 +31,11 @@ namespace UI
 
         private void TextBoxPayment_TextChanged(object sender, EventArgs e)
         {
-            paid = float.Parse(TextBoxPayment.Text);
-            textBoxChange.Text = (-(totalPrice - paid)).ToString("F2");
+            if (TextBoxPayment.Text != "")
+            {
+                paid = float.Parse(TextBoxPayment.Text);
+                textBoxChange.Text = (-(totalPrice - paid)).ToString("F2");
+            }
         }
 
         private void PanelTop_MouseDown(object sender, MouseEventArgs e)
